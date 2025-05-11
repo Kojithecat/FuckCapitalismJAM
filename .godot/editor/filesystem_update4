@@ -5,3 +5,8 @@ res://percentatge.gd
 res://Scenes/game.tscn
 res://Scripts/percentatge.gd
 res://Scripts/game.gd
+res://Scenes/BusinessMan.tscn
+res://Scenes/3dAnimation.gd
+res://Scenes/sub_viewport.gd
+res://sub_viewport.gd
+res://Scenes/animation_player.gd
