@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1746955811
+icon.svg::CompressedTexture2D/CompressedTexture2D::9179677324595493424::1746904652::1746904790::1::::<><><>0<>0<>f695ca10d1b3df936f8af914561c2cbb<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+percentatge.gd::GDScript/GDScript::8432169632146787755::1746955738::0::1::::<>Label<><>0<>0<><>::
+README.md::TextFile/TextFile::-1::1746904652::0::1::::<><><>0<>0<><>::
+::res://assets/::1746904744
+credits.md::TextFile/TextFile::-1::1746904744::0::1::::<><><>0<>0<><>::
+::res://Scenes/::1746955811
+game.tscn::PackedScene::3018128357624040302::1746955813::0::1::::<><><>0<>0<><>::uid://c1iuwc684ogay::::res://Scripts/game.gd<>uid://d8bkxw8op8sv::::res://Scripts/money.gd<>uid://dseuup1saf4vf::::res://percentatge.gd
+::res://Scripts/::1746955811
+game.gd::GDScript::6615520105803076432::1746954622::0::1::::<>Node2D<><>0<>0<><>::
+money.gd::GDScript::278770815271341685::1746954763::0::1::::<>Label<><>0<>0<><>::
