@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjaaer4g8a6gw"]
+[gd_scene load_steps=6 format=3 uid="uid://bjaaer4g8a6gw"]
 
 [ext_resource type="Script" uid="uid://c1iuwc684ogay" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://d8bkxw8op8sv" path="res://Scripts/money.gd" id="2_3dryh"]
 [ext_resource type="Script" uid="uid://dseuup1saf4vf" path="res://Scripts/percentatge.gd" id="3_wowpa"]
+[ext_resource type="Texture2D" uid="uid://dg5konf1tk1s8" path="res://assets/IllaPlaceholder.png" id="4_3dryh"]
+[ext_resource type="Texture2D" uid="uid://dicdd0ycwp1db" path="res://assets/SaFa.jpg" id="5_wowpa"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_wrm1d")
@@ -19,3 +21,60 @@ offset_right = 326.0
 offset_bottom = 142.0
 text = "5%"
 script = ExtResource("3_wowpa")
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="Block1" type="Node2D" parent="Map"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Block1"]
+position = Vector2(380, 125)
+texture = ExtResource("4_3dryh")
+
+[node name="Block2" type="Node2D" parent="Map"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Block2"]
+position = Vector2(580, 125)
+texture = ExtResource("4_3dryh")
+
+[node name="Block3" type="Node2D" parent="Map"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Block3"]
+position = Vector2(780, 125)
+texture = ExtResource("4_3dryh")
+
+[node name="Block4" type="Node2D" parent="Map"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Block4"]
+position = Vector2(380, 325)
+texture = ExtResource("4_3dryh")
+
+[node name="Block5" type="Node2D" parent="Map"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Block5"]
+position = Vector2(579, 328)
+scale = Vector2(0.251359, 0.232337)
+texture = ExtResource("5_wowpa")
+
+[node name="Block6" type="Node2D" parent="Map"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Block6"]
+position = Vector2(780, 325)
+texture = ExtResource("4_3dryh")
+
+[node name="Block7" type="Node2D" parent="Map"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Block7"]
+position = Vector2(380, 525)
+texture = ExtResource("4_3dryh")
+
+[node name="Block8" type="Node2D" parent="Map"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Block8"]
+position = Vector2(580, 525)
+texture = ExtResource("4_3dryh")
+
+[node name="Block9" type="Node2D" parent="Map"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Block9"]
+position = Vector2(780, 525)
+texture = ExtResource("4_3dryh")
