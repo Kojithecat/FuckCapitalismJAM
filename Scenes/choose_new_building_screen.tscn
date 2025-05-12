@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwy3vmav7ccnd"]
+
+[ext_resource type="Texture2D" uid="uid://cvjyluc0n02bx" path="res://assets/Placeholders/ScreenChoseNewBuilding_placeholder.png" id="1_7yocn"]
+
+[node name="ChooseNewBuildingScreen" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7yocn")
+
+[node name="ButtonConfirm" type="Button" parent="."]
+offset_left = 75.0958
+offset_top = 140.996
+offset_right = 146.096
+offset_bottom = 171.996
+scale = Vector2(0.625, 0.625)
+text = "Confirm"
+flat = true
+
+[node name="ButtonCancel" type="Button" parent="."]
+offset_left = 14.5594
+offset_top = 140.996
+offset_right = 85.5594
+offset_bottom = 171.996
+scale = Vector2(0.625, 0.625)
+text = "Cancel"
+flat = true

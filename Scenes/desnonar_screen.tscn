@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://b72mvcse75eku"]
+
+[ext_resource type="Texture2D" uid="uid://chaag7c503g4r" path="res://assets/Placeholders/ScreenDesnonar_placeholder-export.png" id="1_4gu61"]
+
+[node name="DesnonarScreen" type="Node2D"]
+scale = Vector2(1.305, 1.305)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4gu61")
+
+[node name="ButtonConfirm" type="Button" parent="."]
+offset_left = 75.0958
+offset_top = 140.996
+offset_right = 146.096
+offset_bottom = 171.996
+scale = Vector2(0.625, 0.625)
+text = "Confirm"
+flat = true
+
+[node name="ButtonCancel" type="Button" parent="."]
+offset_left = 14.5594
+offset_top = 140.996
+offset_right = 85.5594
+offset_bottom = 171.996
+scale = Vector2(0.625, 0.625)
+text = "Cancel"
+flat = true

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2tjfucfif7jn"]
+
+[ext_resource type="Texture2D" uid="uid://dg5konf1tk1s8" path="res://assets/IllaPlaceholder.png" id="1_1wfmf"]
+[ext_resource type="Script" uid="uid://bvgv3buvn3n82" path="res://Scripts/illaController.gd" id="1_v4eni"]
+[ext_resource type="PackedScene" uid="uid://dwgxab4cvccvt" path="res://Scenes/local.tscn" id="2_1wfmf"]
+
+[node name="Illa" type="Node2D"]
+script = ExtResource("1_v4eni")
+total_locals_list = Array[PackedScene]([null, null, null, null])
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1wfmf")
+
+[node name="Local" parent="." instance=ExtResource("2_1wfmf")]
+position = Vector2(32, -32)
+
+[node name="Local2" parent="." instance=ExtResource("2_1wfmf")]
+position = Vector2(-64, -32)
+
+[node name="Local3" parent="." instance=ExtResource("2_1wfmf")]
+position = Vector2(32, 32)
+rotation = 1.5708
+
+[node name="Local4" parent="." instance=ExtResource("2_1wfmf")]
+position = Vector2(32, -64)
+rotation = 1.5708

@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwgxab4cvccvt"]
+
+[ext_resource type="Script" uid="uid://crikqwtnqypn1" path="res://Scripts/localController.gd" id="1_r0l16"]
+[ext_resource type="Texture2D" uid="uid://dg5konf1tk1s8" path="res://assets/IllaPlaceholder.png" id="2_y70e7"]
+
+[node name="Local" type="Node2D"]
+script = ExtResource("1_r0l16")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_y70e7")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 32.0
+offset_bottom = 63.925
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.478431, 0.721569, 0, 1)
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_local_pressed"]
