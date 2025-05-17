@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl5fgciy34ek2"]
+
+[ext_resource type="Texture2D" uid="uid://djl2t760od1eo" path="res://assets/Avies/1.png" id="1_kiov4"]
+[ext_resource type="Script" uid="uid://bqg0iwl1n46dl" path="res://Scripts/desnonar_screen_demo_1.gd" id="1_qpds1"]
+[ext_resource type="PackedScene" uid="uid://b72mvcse75eku" path="res://Scenes/desnonar_screen.tscn" id="2_hhpml"]
+[ext_resource type="LabelSettings" uid="uid://doiu2fy2aebr4" path="res://Scenes/TextBlack.tres" id="4_qpds1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qpds1"]
+font_color = Color(0.906005, 0, 0.197627, 1)
+
+[node name="desnonar1" type="Node2D"]
+position = Vector2(400, 300)
+script = ExtResource("1_qpds1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-100, -150)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_kiov4")
+
+[node name="DesnonarScreen" parent="." instance=ExtResource("2_hhpml")]
+
+[node name="Desc" type="Label" parent="."]
+offset_left = -162.0
+offset_top = -56.0
+offset_right = 170.0
+offset_bottom = 78.0
+label_settings = ExtResource("4_qpds1")
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Warning" type="Label" parent="."]
+offset_left = -162.0
+offset_top = 100.0
+offset_right = 170.0
+offset_bottom = 234.0
+text = "Are you sure you want to take this property and thus, make the life of this whole family miserable?"
+label_settings = SubResource("LabelSettings_qpds1")
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Nom" type="Label" parent="."]
+offset_left = -38.0
+offset_top = -167.0
+offset_right = 148.0
+offset_bottom = -131.0
+label_settings = ExtResource("4_qpds1")
+metadata/_edit_use_anchors_ = true
