@@ -13,4 +13,5 @@ class_name Local
 signal local_selected
 
 func _on_local_pressed() -> void:
-	emit_signal("local_selected")
+	#emit_signal("local_selected")
+	get_tree().call_group("locals", "handle_child_signal", self)

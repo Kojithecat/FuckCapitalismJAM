@@ -17,16 +17,16 @@ offset_bottom = 40.0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_1wfmf")
 
-[node name="Local" parent="." instance=ExtResource("2_1wfmf")]
+[node name="Local0" parent="." instance=ExtResource("2_1wfmf")]
 position = Vector2(32, -32)
 
-[node name="Local2" parent="." instance=ExtResource("2_1wfmf")]
+[node name="Local1" parent="." instance=ExtResource("2_1wfmf")]
 position = Vector2(-64, -32)
 
-[node name="Local3" parent="." instance=ExtResource("2_1wfmf")]
+[node name="Local2" parent="." instance=ExtResource("2_1wfmf")]
 position = Vector2(32, 32)
 rotation = 1.5708
 
-[node name="Local4" parent="." instance=ExtResource("2_1wfmf")]
+[node name="Local3" parent="." instance=ExtResource("2_1wfmf")]
 position = Vector2(32, -64)
 rotation = 1.5708

@@ -9,7 +9,6 @@
 font_color = Color(0.906005, 0, 0.197627, 1)
 
 [node name="desnonar1" type="Node2D"]
-position = Vector2(400, 300)
 script = ExtResource("1_qpds1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
