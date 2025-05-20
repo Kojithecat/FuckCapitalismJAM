@@ -30,7 +30,6 @@ script = ExtResource("3_wowpa")
 
 [node name="Illa" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(384, 128)
-total_locals_list = Array[PackedScene]([])
 
 [node name="Illa2" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(576, 128)
