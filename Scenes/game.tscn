@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dicdd0ycwp1db" path="res://assets/SaFa.jpg" id="5_wowpa"]
 [ext_resource type="Script" uid="uid://dgf2ta6uyh6ak" path="res://sub_viewport.gd" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://dek0xvfrrdxtb" path="res://Scenes/BusinessMan.tscn" id="8_v158k"]
-[ext_resource type="PackedScene" uid="uid://bl5fgciy34ek2" path="res://Scenes/desnonar_screen_demo1.tscn" id="9_h4fw4"]
+[ext_resource type="PackedScene" uid="uid://scr3pbddnx5j" path="res://Scenes/desnonar_screen_demo1.tscn" id="9_h4fw4"]
 [ext_resource type="PackedScene" uid="uid://cwy3vmav7ccnd" path="res://Scenes/choose_new_building_screen.tscn" id="11_rku1e"]
 
 [node name="Game" type="Node2D"]
@@ -72,10 +72,10 @@ position = Vector2(992, 408)
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 position = Vector2(576, 320)
 
-[node name="ChooseNewBuildingScreen" parent="CanvasGroup" instance=ExtResource("11_rku1e")]
+[node name="DesnonarScreen" parent="CanvasGroup" instance=ExtResource("9_h4fw4")]
 visible = false
 
-[node name="desnonar1" parent="CanvasGroup" instance=ExtResource("9_h4fw4")]
+[node name="ChooseNewBuildingScreen" parent="CanvasGroup" instance=ExtResource("11_rku1e")]
 visible = false
 
 [editable path="Map/Illa1"]

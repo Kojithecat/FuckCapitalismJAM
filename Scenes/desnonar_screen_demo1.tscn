@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl5fgciy34ek2"]
+[gd_scene load_steps=6 format=3 uid="uid://scr3pbddnx5j"]
 
 [ext_resource type="Texture2D" uid="uid://djl2t760od1eo" path="res://assets/Avies/1.png" id="1_kiov4"]
 [ext_resource type="Script" uid="uid://bqg0iwl1n46dl" path="res://Scripts/desnonar_screen_demo_1.gd" id="1_qpds1"]
-[ext_resource type="PackedScene" uid="uid://b72mvcse75eku" path="res://Scenes/desnonar_screen.tscn" id="2_hhpml"]
+[ext_resource type="Texture2D" uid="uid://chaag7c503g4r" path="res://assets/Placeholders/ScreenDesnonar_placeholder-export.png" id="2_qpds1"]
 [ext_resource type="LabelSettings" uid="uid://doiu2fy2aebr4" path="res://Scenes/TextBlack.tres" id="4_qpds1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qpds1"]
@@ -11,13 +11,23 @@ font_color = Color(0.906005, 0, 0.197627, 1)
 [node name="desnonar1" type="Node2D"]
 script = ExtResource("1_qpds1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Fons Placeholder" type="Sprite2D" parent="."]
+scale = Vector2(1.31, 1.31)
+texture = ExtResource("2_qpds1")
+
+[node name="Foto Placeholder" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(-100, -150)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_kiov4")
 
-[node name="DesnonarScreen" parent="." instance=ExtResource("2_hhpml")]
+[node name="Nom" type="Label" parent="."]
+offset_left = -38.0
+offset_top = -167.0
+offset_right = 148.0
+offset_bottom = -131.0
+label_settings = ExtResource("4_qpds1")
+metadata/_edit_use_anchors_ = true
 
 [node name="Desc" type="Label" parent="."]
 offset_left = -162.0
@@ -27,6 +37,14 @@ offset_bottom = 78.0
 label_settings = ExtResource("4_qpds1")
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
+
+[node name="Preu" type="Label" parent="."]
+offset_left = 120.0
+offset_top = -88.0
+offset_right = 160.0
+offset_bottom = -65.0
+theme_override_colors/font_color = Color(0.901961, 0, 0.2, 1)
+text = "10"
 
 [node name="Warning" type="Label" parent="."]
 offset_left = -162.0
@@ -38,10 +56,23 @@ label_settings = SubResource("LabelSettings_qpds1")
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="Nom" type="Label" parent="."]
-offset_left = -38.0
-offset_top = -167.0
-offset_right = 148.0
-offset_bottom = -131.0
-label_settings = ExtResource("4_qpds1")
-metadata/_edit_use_anchors_ = true
+[node name="ButtonConfirm" type="Button" parent="."]
+offset_left = 96.0
+offset_top = 184.0
+offset_right = 167.0
+offset_bottom = 215.0
+scale = Vector2(0.84, 0.84)
+text = "Confirm"
+flat = true
+
+[node name="ButtonCancel" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 184.0
+offset_right = 87.0
+offset_bottom = 215.0
+scale = Vector2(0.84, 0.84)
+text = "Cancel"
+flat = true
+
+[connection signal="pressed" from="ButtonConfirm" to="." method="onAcceptTermsAndConditions"]
+[connection signal="pressed" from="ButtonCancel" to="." method="onCancel"]

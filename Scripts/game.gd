@@ -3,7 +3,7 @@ extends Node2D
 @onready var viewport = $SubViewport
 @onready var sprite = $BusinessMan
 @onready var chooseBuilding = $CanvasGroup/ChooseNewBuildingScreen
-@onready var desnonar = $CanvasGroup/desnonar1
+@onready var desnonar = $CanvasGroup/DesnonarScreen
 var buildingSelected = 0
 var localSelected = null
 var option = 0
@@ -12,38 +12,22 @@ func _ready() -> void:
 	pass
 
 func _process(delta):
-	if(chooseBuilding.visible):
-		buildingSelected = handle_choosing_building()
-	if(buildingSelected != 0):
-		print(buildingSelected) #Edificació a construir
-		print(localSelected) #Local seleccionat (d'aqui es pot treure la illa i el local que toquen)
-		desnonar.visible = true #Aqui es posará el desnonar que toqui en el moment qeu toqui
 	var texture = viewport.get_texture()
 	sprite.texture = texture
-	add_to_group("locals")
+	add_to_group("gameController")
 
-func handle_child_signal(data):
-	chooseBuilding.visible = true
-	
-	var local = data.name
-	var illa = data.get_parent().name
-	localSelected =  int(str(illa)[-1])*4 + int(str(local)[-1]) #Calcul del local es: #Illa *4 + #local
-	# Handle the signal
+#Rep avís que s'ha triat un local i activa la pantalla de desnonar amb la info corresponent
+func handle_local_selected(data):
+	print(data.preu)
+	localSelected = data
+	desnonar.visible = true
+	desnonar.load_data(data.nameOg, data.descriptionOg, data.preu)
 
-func handle_choosing_building():
-	if($CanvasGroup/ChooseNewBuildingScreen/ButtonCancel.button_pressed):
-		chooseBuilding.visible = false
-	for i in range(1,10):
-		var button = get_node("CanvasGroup/ChooseNewBuildingScreen/Option" + str(i))
-		if(button.button_pressed):
-			option = i
-	print(option)
-	if($CanvasGroup/ChooseNewBuildingScreen/ButtonConfirm.button_pressed and option != 0):
-		chooseBuilding.visible = false
-		return option
-	else:
-		return 0	# No selection
+#Rep avís que la pantalla de desnonar s'ha confirmat i activa la de triar nou negoci
+func handle_desnonar_confirmed():
+	desnonar.visible = false;
+	chooseBuilding.visible = true;
 
-		
-
-	
+#Rep la info del nou negoci (choose_new_building_scrren) i crida al local perque actualitzi les seves noves dades
+func handle_new_building_selected(data):
+	localSelected.purchase_local(data.newName, data.newDesc, data.newRevenue)

@@ -1,11 +1,16 @@
 extends Node2D
 
-@onready var Nom = $Nom
-@onready var Desc = $Desc
+@onready var nomDisplay = $Nom
+@onready var descDisplay = $Desc
+@onready var preuDisplay = $Preu
 
-func _ready():
-	load_and_display_json()
+func load_data(nom: String, desc: String, preu: int):
+	print(nom)
+	nomDisplay.text = nom
+	descDisplay.text = desc
+	preuDisplay.text = str(preu)
 
+#Ja no cal
 func load_and_display_json():
 	# Load the JSON file
 	var num_historia = get_hist_num()
@@ -13,8 +18,8 @@ func load_and_display_json():
 	var file = FileAccess.open(path, FileAccess.READ)
 	if file == null:
 		var error = FileAccess.get_open_error()
-		Nom.text = "Error loading file: " + str(error)
-		Desc.text = "Error loading file: " + str(error)
+		nomDisplay.text = "Error loading file: " + str(error)
+		descDisplay.text = "Error loading file: " + str(error)
 		return
 	
 	# Parse the JSON data
@@ -23,8 +28,8 @@ func load_and_display_json():
 	file.close()
 	
 	if parse_result != OK:
-		Nom.text = "JSON Parse Error: " + json.get_error_message()
-		Desc.text = "JSON Parse Error: " + json.get_error_message()
+		nomDisplay.text = "JSON Parse Error: " + json.get_error_message()
+		descDisplay.text = "JSON Parse Error: " + json.get_error_message()
 		return
 	# Get the parsed data
 	var data = json.get_data()
@@ -32,12 +37,20 @@ func load_and_display_json():
 	# Update the label with the data
 	# Modify this part based on your JSON structure
 	if typeof(data) == TYPE_DICTIONARY:
-		Nom.text = str(data.get("name"))  
-		Desc.text = str(data.get("desc"))  
+		nomDisplay.text = str(data.get("name"))  
+		descDisplay.text = str(data.get("desc"))  
 		# OR access specific values, e.g.:
 		# label.text = data.get("some_key", "Default text")
-		
+
+#Ja no cal
 func get_hist_num():
-	#El num el treiem del nom de l'escena, així podem relacionar text, avia, localantic, localnou,...
+	#El num el treiem del nom de l'escena, així podem relacionar text, avia, localantic, loc
 	var scene_name = get_tree().current_scene.name
 	return str(scene_name)[-1]
+
+func onAcceptTermsAndConditions():
+	get_tree().call_group("gameController", "handle_desnonar_confirmed")
+	self.visible = false
+
+func onCancel():
+	self.visible = false
