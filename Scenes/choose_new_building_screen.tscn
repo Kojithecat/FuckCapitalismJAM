@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwy3vmav7ccnd"]
+[gd_scene load_steps=4 format=3 uid="uid://cwy3vmav7ccnd"]
 
 [ext_resource type="Texture2D" uid="uid://cvjyluc0n02bx" path="res://assets/Placeholders/ScreenChoseNewBuilding_placeholder.png" id="1_7yocn"]
+[ext_resource type="Script" uid="uid://cpsqvxv5ms8o2" path="res://Scenes/chooseBuildingController.gd" id="1_51tce"]
+[ext_resource type="Texture2D" uid="uid://b14qg02grftmd" path="res://assets/McD.webp" id="2_jsa54"]
 
 [node name="ChooseNewBuildingScreen" type="Node2D"]
+script = ExtResource("1_51tce")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_7yocn")
@@ -24,3 +27,103 @@ offset_bottom = 171.996
 scale = Vector2(0.625, 0.625)
 text = "Cancel"
 flat = true
+
+[node name="Option1" type="Button" parent="."]
+offset_left = -123.0
+offset_top = -138.0
+offset_right = -5.99998
+offset_bottom = -47.9999
+scale = Vector2(0.625, 0.625)
+toggle_mode = true
+icon = ExtResource("2_jsa54")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Option2" type="Button" parent="."]
+offset_left = -39.0
+offset_top = -138.0
+offset_right = 80.0
+offset_bottom = -50.0
+scale = Vector2(0.625, 0.625)
+icon = ExtResource("2_jsa54")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Option3" type="Button" parent="."]
+offset_left = 46.0
+offset_top = -137.0
+offset_right = 164.0
+offset_bottom = -52.0
+scale = Vector2(0.625, 0.625)
+icon = ExtResource("2_jsa54")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Option4" type="Button" parent="."]
+offset_left = -124.0
+offset_top = -55.0
+offset_right = -5.99998
+offset_bottom = 30.0
+scale = Vector2(0.625, 0.625)
+icon = ExtResource("2_jsa54")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Option5" type="Button" parent="."]
+offset_left = -38.0
+offset_top = -55.0
+offset_right = 80.0
+offset_bottom = 30.0
+scale = Vector2(0.625, 0.625)
+icon = ExtResource("2_jsa54")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Option6" type="Button" parent="."]
+offset_left = 46.0
+offset_top = -56.0
+offset_right = 164.0
+offset_bottom = 29.0
+scale = Vector2(0.625, 0.625)
+icon = ExtResource("2_jsa54")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Option7" type="Button" parent="."]
+offset_left = -124.0
+offset_top = 27.0
+offset_right = -5.99998
+offset_bottom = 112.0
+scale = Vector2(0.625, 0.625)
+icon = ExtResource("2_jsa54")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Option8" type="Button" parent="."]
+offset_left = -39.0
+offset_top = 27.0
+offset_right = 79.0
+offset_bottom = 112.0
+scale = Vector2(0.625, 0.625)
+icon = ExtResource("2_jsa54")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Option9" type="Button" parent="."]
+offset_left = 46.0
+offset_top = 27.0
+offset_right = 164.0
+offset_bottom = 112.0
+scale = Vector2(0.625, 0.625)
+icon = ExtResource("2_jsa54")
+flat = true
+icon_alignment = 1
+expand_icon = true

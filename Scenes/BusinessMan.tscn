@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://ddquoy7sjeaax" path="res://assets/3d/Business Man.glb" id="1_ga0m5"]
 [ext_resource type="Script" uid="uid://0xhdfyj8rr5s" path="res://Scripts/animation_player.gd" id="2_b1lmm"]
 
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ga0m5"]
 resource_name = "Skin"
 albedo_color = Color(0.731236, 0.613314, 0.473951, 1)
