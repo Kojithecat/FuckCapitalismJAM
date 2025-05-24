@@ -7,10 +7,10 @@ extends Node2D
 func _ready() -> void:
 	add_to_group("chooseNewBuildingGroup")
 
-func handle_building_option_selected(data):
-	newName = data.nomNewBuilding
-	newDesc = data.descNewBuilding
-	newRevenue = data.revenue
+func handle_building_option_selected(newBuildingOptionNode):
+	newName = newBuildingOptionNode.nomNewBuilding
+	newDesc = newBuildingOptionNode.descNewBuilding
+	newRevenue = newBuildingOptionNode.revenue
 	$ButtonConfirm.disabled = false
 
 func onConfirm():

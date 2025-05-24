@@ -7,6 +7,7 @@ extends Node2D
 var buildingSelected = 0
 var localSelected = null
 var option = 0
+var counter = 1
 
 func _ready() -> void:
 	pass
@@ -17,17 +18,21 @@ func _process(delta):
 	add_to_group("gameController")
 
 #Rep avís que s'ha triat un local i activa la pantalla de desnonar amb la info corresponent
-func handle_local_selected(data):
-	print(data.preu)
-	localSelected = data
+func handle_local_selected(localNode):
+	localSelected = localNode
+	chooseAndLoadLocal(localNode)
 	desnonar.visible = true
-	desnonar.load_data(data.nameOg, data.descriptionOg, data.preu)
+	desnonar.load_data(localNode.nameOg, localNode.descriptionOg, localNode.preu)
 
 #Rep avís que la pantalla de desnonar s'ha confirmat i activa la de triar nou negoci
 func handle_desnonar_confirmed():
 	desnonar.visible = false;
 	chooseBuilding.visible = true;
 
-#Rep la info del nou negoci (choose_new_building_scrren) i crida al local perque actualitzi les seves noves dades
-func handle_new_building_selected(data):
-	localSelected.purchase_local(data.newName, data.newDesc, data.newRevenue)
+#Rep la info del nou negoci (choose_new_building_screen) i crida al local perque actualitzi les seves noves dades
+func handle_new_building_selected(chooseNewBuildingNode):
+	localSelected.purchase_local(chooseNewBuildingNode.newName, chooseNewBuildingNode.newDesc, chooseNewBuildingNode.newRevenue)
+
+func chooseAndLoadLocal(localNode):
+	#TODO Fas counter i crides localNode.load_init_data()
+	++counter

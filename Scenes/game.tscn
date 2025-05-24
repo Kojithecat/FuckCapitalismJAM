@@ -67,6 +67,7 @@ script = ExtResource("7_1l0tm")
 [node name="Root Scene" parent="SubViewport" instance=ExtResource("8_v158k")]
 
 [node name="BusinessMan" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(992, 408)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
