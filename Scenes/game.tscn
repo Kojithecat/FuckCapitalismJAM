@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c1iuwc684ogay" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://d8bkxw8op8sv" path="res://Scripts/money.gd" id="2_3dryh"]
 [ext_resource type="Script" uid="uid://dseuup1saf4vf" path="res://Scripts/percentatge.gd" id="3_wowpa"]
-[ext_resource type="Script" uid="uid://bjipqqg55duhh" path="res://Scenes/date.gd" id="4_ldgsr"]
+[ext_resource type="Script" uid="uid://bjipqqg55duhh" path="res://Scripts/date.gd" id="4_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://b2tjfucfif7jn" path="res://Scenes/illa.tscn" id="4_o5yvi"]
 [ext_resource type="Texture2D" uid="uid://dicdd0ycwp1db" path="res://assets/SaFa.jpg" id="5_wowpa"]
 [ext_resource type="Script" uid="uid://dgf2ta6uyh6ak" path="res://sub_viewport.gd" id="7_1l0tm"]
