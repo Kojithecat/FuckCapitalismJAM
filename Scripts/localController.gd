@@ -2,17 +2,20 @@ extends Node2D
 
 class_name Local
 
+@export var nameOg: String = "nom placeholder"
+@export var descriptionOg: String = "descripcio placeholder"
 @export var preu: int = 10
+
 @export var purchased: bool = false
-@export var nameOg: String = "nom"
-@export var descriptionOg: String = "descripcio"
+
 @export var nameNew: String
 @export var descriptionNew: String
 @export var revenue: int = 0
 
-func load_init_data():
-	#TODO load data for option
-	print("Implementation pending...")
+func load_init_data(nameInit: String, descriptionInit: String, preuInit: int):
+	nameOg = nameInit
+	descriptionOg = descriptionInit
+	preu = preuInit
 
 func on_local_pressed() -> void:
 	if !purchased:
