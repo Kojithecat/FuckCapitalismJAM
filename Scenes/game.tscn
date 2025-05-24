@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjaaer4g8a6gw"]
+[gd_scene load_steps=10 format=3 uid="uid://bjaaer4g8a6gw"]
 
 [ext_resource type="Script" uid="uid://c1iuwc684ogay" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://d8bkxw8op8sv" path="res://Scripts/money.gd" id="2_3dryh"]
 [ext_resource type="Script" uid="uid://dseuup1saf4vf" path="res://Scripts/percentatge.gd" id="3_wowpa"]
-[ext_resource type="Texture2D" uid="uid://dg5konf1tk1s8" path="res://assets/IllaPlaceholder.png" id="4_3dryh"]
-[ext_resource type="Texture2D" uid="uid://d31x7dxps0u0g" path="res://icon.svg" id="5_i6g32"]
+[ext_resource type="PackedScene" uid="uid://b2tjfucfif7jn" path="res://Scenes/illa.tscn" id="4_o5yvi"]
 [ext_resource type="Texture2D" uid="uid://dicdd0ycwp1db" path="res://assets/SaFa.jpg" id="5_wowpa"]
 [ext_resource type="Script" uid="uid://dgf2ta6uyh6ak" path="res://sub_viewport.gd" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://dek0xvfrrdxtb" path="res://Scenes/BusinessMan.tscn" id="8_v158k"]
+[ext_resource type="PackedScene" uid="uid://scr3pbddnx5j" path="res://Scenes/desnonar_screen_demo1.tscn" id="9_h4fw4"]
+[ext_resource type="PackedScene" uid="uid://cwy3vmav7ccnd" path="res://Scenes/choose_new_building_screen.tscn" id="11_rku1e"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_wrm1d")
@@ -27,162 +28,37 @@ script = ExtResource("3_wowpa")
 
 [node name="Map" type="Node2D" parent="."]
 
-[node name="Block1" type="Node2D" parent="Map"]
+[node name="Illa1" parent="Map" instance=ExtResource("4_o5yvi")]
+position = Vector2(384, 128)
 
-[node name="Sprite2D" type="Sprite2D" parent="Map/Block1"]
-position = Vector2(380, 125)
-texture = ExtResource("4_3dryh")
+[node name="Illa2" parent="Map" instance=ExtResource("4_o5yvi")]
+position = Vector2(576, 128)
 
-[node name="Button" type="Button" parent="Map/Block1"]
-offset_left = 412.0
-offset_top = 89.0
-offset_right = 443.0
-offset_bottom = 165.0
-icon = ExtResource("5_i6g32")
-expand_icon = true
+[node name="Illa3" parent="Map" instance=ExtResource("4_o5yvi")]
+position = Vector2(768, 128)
 
-[node name="Button3" type="Button" parent="Map/Block1"]
-offset_left = 316.0
-offset_top = 87.0
-offset_right = 347.0
-offset_bottom = 162.0
-icon = ExtResource("5_i6g32")
-expand_icon = true
+[node name="Illa4" parent="Map" instance=ExtResource("4_o5yvi")]
+position = Vector2(384, 320)
 
-[node name="Button2" type="Button" parent="Map/Block1"]
-offset_left = 342.0
-offset_top = 157.0
-offset_right = 418.0
-offset_bottom = 189.0
-icon = ExtResource("5_i6g32")
-icon_alignment = 1
-expand_icon = true
+[node name="Illa5" parent="Map" instance=ExtResource("4_o5yvi")]
+position = Vector2(768, 320)
 
-[node name="Button4" type="Button" parent="Map/Block1"]
-offset_left = 342.0
-offset_top = 61.0
-offset_right = 418.0
-offset_bottom = 93.0
-icon = ExtResource("5_i6g32")
-icon_alignment = 1
-expand_icon = true
+[node name="Illa6" parent="Map" instance=ExtResource("4_o5yvi")]
+position = Vector2(384, 512)
 
-[node name="Block2" type="Node2D" parent="Map"]
+[node name="Illa7" parent="Map" instance=ExtResource("4_o5yvi")]
+position = Vector2(576, 512)
 
-[node name="Sprite2D" type="Sprite2D" parent="Map/Block2"]
-position = Vector2(580, 125)
-texture = ExtResource("4_3dryh")
+[node name="Illa8" parent="Map" instance=ExtResource("4_o5yvi")]
+position = Vector2(768, 512)
 
-[node name="Button5" type="Button" parent="Map/Block2"]
-offset_left = 612.0
-offset_top = 89.0
-offset_right = 643.0
-offset_bottom = 165.0
-icon = ExtResource("5_i6g32")
-expand_icon = true
+[node name="SagradaFamilia" type="Node2D" parent="Map"]
+position = Vector2(0, -8)
 
-[node name="Button6" type="Button" parent="Map/Block2"]
-offset_left = 516.0
-offset_top = 87.0
-offset_right = 547.0
-offset_bottom = 162.0
-icon = ExtResource("5_i6g32")
-expand_icon = true
-
-[node name="Button7" type="Button" parent="Map/Block2"]
-offset_left = 542.0
-offset_top = 157.0
-offset_right = 618.0
-offset_bottom = 189.0
-icon = ExtResource("5_i6g32")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Button8" type="Button" parent="Map/Block2"]
-offset_left = 542.0
-offset_top = 61.0
-offset_right = 618.0
-offset_bottom = 93.0
-icon = ExtResource("5_i6g32")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Block3" type="Node2D" parent="Map"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Map/Block3"]
-position = Vector2(780, 125)
-texture = ExtResource("4_3dryh")
-
-[node name="Button9" type="Button" parent="Map/Block3"]
-offset_left = 812.0
-offset_top = 89.0
-offset_right = 843.0
-offset_bottom = 165.0
-icon = ExtResource("5_i6g32")
-expand_icon = true
-
-[node name="Button10" type="Button" parent="Map/Block3"]
-offset_left = 716.0
-offset_top = 87.0
-offset_right = 747.0
-offset_bottom = 162.0
-icon = ExtResource("5_i6g32")
-expand_icon = true
-
-[node name="Button11" type="Button" parent="Map/Block3"]
-offset_left = 742.0
-offset_top = 157.0
-offset_right = 818.0
-offset_bottom = 189.0
-icon = ExtResource("5_i6g32")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Button12" type="Button" parent="Map/Block3"]
-offset_left = 742.0
-offset_top = 61.0
-offset_right = 818.0
-offset_bottom = 93.0
-icon = ExtResource("5_i6g32")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Block4" type="Node2D" parent="Map"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Map/Block4"]
-position = Vector2(380, 325)
-texture = ExtResource("4_3dryh")
-
-[node name="Block5" type="Node2D" parent="Map"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Map/Block5"]
+[node name="Sprite2D" type="Sprite2D" parent="Map/SagradaFamilia"]
 position = Vector2(579, 328)
 scale = Vector2(0.251359, 0.232337)
 texture = ExtResource("5_wowpa")
-
-[node name="Block6" type="Node2D" parent="Map"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Map/Block6"]
-position = Vector2(780, 325)
-texture = ExtResource("4_3dryh")
-
-[node name="Block7" type="Node2D" parent="Map"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Map/Block7"]
-position = Vector2(380, 525)
-texture = ExtResource("4_3dryh")
-
-[node name="Block8" type="Node2D" parent="Map"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Map/Block8"]
-position = Vector2(580, 525)
-texture = ExtResource("4_3dryh")
-
-[node name="Block9" type="Node2D" parent="Map"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Map/Block9"]
-position = Vector2(780, 525)
-texture = ExtResource("4_3dryh")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
@@ -191,4 +67,16 @@ script = ExtResource("7_1l0tm")
 [node name="Root Scene" parent="SubViewport" instance=ExtResource("8_v158k")]
 
 [node name="BusinessMan" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(992, 408)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+position = Vector2(576, 320)
+
+[node name="DesnonarScreen" parent="CanvasGroup" instance=ExtResource("9_h4fw4")]
+visible = false
+
+[node name="ChooseNewBuildingScreen" parent="CanvasGroup" instance=ExtResource("11_rku1e")]
+visible = false
+
+[editable path="Map/Illa1"]

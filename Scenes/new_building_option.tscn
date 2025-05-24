@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://3h0t6j8vpafq"]
+
+[ext_resource type="Texture2D" uid="uid://b14qg02grftmd" path="res://assets/McD.webp" id="1_axgbj"]
+[ext_resource type="Script" uid="uid://c2yx7invi7vx8" path="res://Scripts/new_building_option.gd" id="1_ci2g1"]
+
+[node name="NewBuildingOption" type="Node2D"]
+script = ExtResource("1_ci2g1")
+
+[node name="Option1" type="Button" parent="."]
+offset_right = 117.0
+offset_bottom = 90.0001
+scale = Vector2(1.225, 1.225)
+toggle_mode = true
+icon = ExtResource("1_axgbj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Nom" type="Label" parent="."]
+offset_left = 22.0
+offset_top = 107.0
+offset_right = 62.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "NOM 1"
+
+[node name="Desc" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 128.0
+offset_right = 116.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DESCRIPCIÓ 1"
+
+[node name="Revenue" type="Label" parent="."]
+offset_left = 74.0
+offset_top = 154.0
+offset_right = 115.0
+offset_bottom = 177.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "20"
+
+[connection signal="pressed" from="Option1" to="." method="onSelect"]
