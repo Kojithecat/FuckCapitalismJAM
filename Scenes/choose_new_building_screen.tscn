@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://3h0t6j8vpafq" path="res://Scenes/new_building_option.tscn" id="4_xkjal"]
 
 [node name="ChooseNewBuildingScreen" type="Node2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_51tce")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -32,38 +33,65 @@ flat = true
 [node name="NewBuildingOption" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-120, -136)
 scale = Vector2(0.395, 0.395)
+nomNewBuilding = "Fast Food"
+revenue = 10000
+price = 100000
 
 [node name="NewBuildingOption2" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-32, -136)
 scale = Vector2(0.395, 0.395)
+nomNewBuilding = "Souvenir Shop"
+revenue = 20000
+price = 200000
 
 [node name="NewBuildingOption3" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(56, -136)
 scale = Vector2(0.395, 0.395)
+nomNewBuilding = "Café especialidad"
+revenue = 33000
+price = 300000
 
 [node name="NewBuildingOption4" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-120, -48)
 scale = Vector2(0.395, 0.395)
+nomNewBuilding = "Money eXchange"
+revenue = 60000
+price = 500000
 
 [node name="NewBuildingOption5" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-32, -48)
 scale = Vector2(0.395, 0.395)
+nomNewBuilding = "Smash burger"
+revenue = 85000
+price = 700000
 
 [node name="NewBuildingOption6" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(56, -48)
 scale = Vector2(0.395, 0.395)
+nomNewBuilding = "b&b"
+revenue = 125000
+price = 1000000
 
 [node name="NewBuildingOption7" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-120, 32)
 scale = Vector2(0.395, 0.395)
+nomNewBuilding = "Avocado brunch"
+revenue = 200000
+price = 1500000
 
 [node name="NewBuildingOption8" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-32, 32)
 scale = Vector2(0.395, 0.395)
+nomNewBuilding = "Bet Bet Bet"
+revenue = 280000
+price = 2000000
 
 [node name="NewBuildingOption9" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(56, 32)
 scale = Vector2(0.395, 0.395)
+nomNewBuilding = "Hotel HolyFam"
+revenue = 440000
+price = 3000000
 
 [connection signal="pressed" from="ButtonConfirm" to="." method="onConfirm"]
 [connection signal="pressed" from="ButtonCancel" to="." method="onCancel"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjaaer4g8a6gw"]
+[gd_scene load_steps=11 format=3 uid="uid://bjaaer4g8a6gw"]
 
 [ext_resource type="Script" uid="uid://c1iuwc684ogay" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://d8bkxw8op8sv" path="res://Scripts/money.gd" id="2_3dryh"]
 [ext_resource type="Script" uid="uid://dseuup1saf4vf" path="res://Scripts/percentatge.gd" id="3_wowpa"]
+[ext_resource type="Script" uid="uid://bjipqqg55duhh" path="res://Scenes/date.gd" id="4_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://b2tjfucfif7jn" path="res://Scenes/illa.tscn" id="4_o5yvi"]
 [ext_resource type="Texture2D" uid="uid://dicdd0ycwp1db" path="res://assets/SaFa.jpg" id="5_wowpa"]
 [ext_resource type="Script" uid="uid://dgf2ta6uyh6ak" path="res://sub_viewport.gd" id="7_1l0tm"]
@@ -14,17 +15,22 @@
 script = ExtResource("1_wrm1d")
 
 [node name="Money" type="Label" parent="."]
+offset_top = 50.0
 offset_right = 325.0
-offset_bottom = 97.0
+offset_bottom = 147.0
 script = ExtResource("2_3dryh")
 
 [node name="Percentage" type="Label" parent="."]
-offset_left = 1.0
-offset_top = 45.0
-offset_right = 326.0
-offset_bottom = 142.0
+offset_top = 100.0
+offset_right = 325.0
+offset_bottom = 197.0
 text = "5%"
 script = ExtResource("3_wowpa")
+
+[node name="Date" type="Label" parent="."]
+offset_right = 325.0
+offset_bottom = 97.0
+script = ExtResource("4_ldgsr")
 
 [node name="Map" type="Node2D" parent="."]
 
@@ -78,5 +84,9 @@ visible = false
 
 [node name="ChooseNewBuildingScreen" parent="CanvasGroup" instance=ExtResource("11_rku1e")]
 visible = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
 
 [editable path="Map/Illa1"]

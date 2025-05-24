@@ -3,6 +3,8 @@ extends Node2D
 @onready var nomDisplay = $Nom
 @onready var descDisplay = $Desc
 @onready var preuDisplay = $Preu
+#El cost de desnonar es constant (10k) per demostrar que qualsevol amb diners te el poder de desnonar 
+var costDesnonar = 10000
 
 func load_data(nom: String, desc: String, preu: int):
 	print(nom)

@@ -1,14 +1,16 @@
 extends Node2D
 
-var nomNewBuilding: String = "NOM 1"
-var descNewBuilding: String = "DESCRIPCIO 1"
-var revenue: int = 20
+@export var nomNewBuilding: String = "NOM 1"
+@export var descNewBuilding: String = "DESCRIPCIO 1"
+@export var revenue: int = 20
+@export var price: int = 100
 
 func _ready() -> void:
 	#S'haurà de moure a load_init_data això
 	$Nom.text = nomNewBuilding
 	$Desc.text = descNewBuilding
-	$Revenue.text = str(revenue)
+	$Price.text = str(price) + " $"
+	$Revenue.text = str(revenue) + " $/month"
 
 func load_init_data():
 	#TODO load data for option
