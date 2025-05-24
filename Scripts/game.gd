@@ -50,7 +50,6 @@ func handle_new_building_selected(chooseNewBuildingNode):
 		$Money.decrement_money(chooseNewBuildingNode.newPrice)
 		$Money.decrement_money(localSelected.preu)
 		counter += 1
-		print(counter)
 	else:
 		#TODO Hem de fer handle per quan no tinguem prous diners (T'ho financia la familia, herencia, ajuda del banc, etc)
 		print("No tens prous diners")
