@@ -51,7 +51,6 @@ func handle_new_building_selected(chooseNewBuildingNode):
 		#Descontem el cost de desnonar
 		$Money.decrement_cost_desnonar()
 		counter += 1
-		print(counter)
 	else:
 		#TODO Hem de fer handle per quan no tinguem prous diners (T'ho financia la familia, herencia, ajuda del banc, etc)
 		print("No tens prous diners")

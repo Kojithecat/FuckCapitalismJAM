@@ -17,7 +17,6 @@ func handle_building_option_selected(newBuildingOptionNode):
 	$ButtonConfirm.disabled = false
 
 func onConfirm():
-	print("cha ching")
 	get_tree().call_group("gameController", "handle_new_building_selected", self)
 	self.visible = false
 
