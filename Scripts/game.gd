@@ -38,17 +38,18 @@ func handle_local_selected(localNode):
 #Rep avís que la pantalla de desnonar s'ha confirmat i activa la de triar nou negoci
 func handle_desnonar_confirmed():
 	desnonar.visible = false;
-	#Descontem el cost de desnonar
-	$Money.decrement_cost_desnonar()
+
 	chooseBuilding.visible = true;
 
 #Rep la info del nou negoci (choose_new_building_screen), crida al local perque actualitzi les seves noves dades i gestiona diners
 func handle_new_building_selected(chooseNewBuildingNode):
-	if(chooseNewBuildingNode.newPrice <= $Money.counter):
+	if(chooseNewBuildingNode.newPrice + 10000 <= $Money.counter):
 		localSelected.purchase_local(chooseNewBuildingNode.newName, chooseNewBuildingNode.newDesc, chooseNewBuildingNode.newRevenue)
 		monthlyIncome += chooseNewBuildingNode.newRevenue
 		$Money.decrement_money(chooseNewBuildingNode.newPrice)
-		$Money.decrement_money(localSelected.preu)
+		# Cal ficar el preu local? Ja tenim el de desnonar i el del nou local $Money.decrement_money(localSelected.preu)
+		#Descontem el cost de desnonar
+		$Money.decrement_cost_desnonar()
 		counter += 1
 		print(counter)
 	else:
@@ -58,7 +59,7 @@ func handle_new_building_selected(chooseNewBuildingNode):
 
 func chooseAndLoadLocal(localNode):
 	if counter <= 24:
-		var file_path = "res://assets/locals/" + str(counter) + ".json"
+		var file_path = "res://assets/Locals/" + str(counter) + ".json"
 		var json_as_text = FileAccess.get_file_as_string(file_path)
 		var json_as_dict = JSON.parse_string(json_as_text)
 		localNode.load_init_data(json_as_dict["name"], json_as_dict["desc"], json_as_dict["preu"])
