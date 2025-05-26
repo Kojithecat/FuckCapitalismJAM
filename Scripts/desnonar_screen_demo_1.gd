@@ -56,3 +56,4 @@ func onAcceptTermsAndConditions():
 
 func onCancel():
 	self.visible = false
+	get_tree().call_group("gameController", "onCancel")
