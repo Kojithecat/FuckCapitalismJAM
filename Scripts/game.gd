@@ -16,13 +16,13 @@ func _ready() -> void:
 #Cada 10 segons pasa un mes
 
 func _on_timer_timeout():
-	print("This happens every 10 seconds")
+	print("This happens every 5 seconds")
 	#Increment del mes
 	$Date.increment_date()
 	#Guanyem l'income del mes 
 	if(monthlyIncome > 0):
 		$Money.increment_money(monthlyIncome)
-		$AudioStreamPlayer2D.play()
+		$Income.play()
 	# Your repeating code here
 
 func _process(delta):
@@ -51,6 +51,7 @@ func handle_new_building_selected(chooseNewBuildingNode):
 		$Money.decrement_money(chooseNewBuildingNode.newPrice)
 		# Cal ficar el preu local? Ja tenim el de desnonar i el del nou local $Money.decrement_money(localSelected.preu)
 		#Descontem el cost de desnonar
+		$ChaChing.play()
 		$Money.decrement_cost_desnonar()
 		set_locals_enabled($Map, true)
 		counter += 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjaaer4g8a6gw"]
+[gd_scene load_steps=13 format=3 uid="uid://bjaaer4g8a6gw"]
 
 [ext_resource type="Script" uid="uid://c1iuwc684ogay" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://d8bkxw8op8sv" path="res://Scripts/money.gd" id="2_3dryh"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://scr3pbddnx5j" path="res://Scenes/desnonar_screen_demo1.tscn" id="9_h4fw4"]
 [ext_resource type="AudioStream" uid="uid://ccjet2vr1j8fi" path="res://assets/sound/passive-income.mp3" id="11_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://cwy3vmav7ccnd" path="res://Scenes/choose_new_building_screen.tscn" id="11_rku1e"]
+[ext_resource type="AudioStream" uid="uid://cronjcmymo53b" path="res://assets/sound/cashier-sound.mp3" id="12_rku1e"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_wrm1d")
@@ -87,11 +88,24 @@ visible = false
 visible = false
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 7.0
+wait_time = 5.0
 autostart = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Income" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_o5yvi")
 max_polyphony = 4
 
+[node name="ChaChing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_rku1e")
+
 [editable path="Map/Illa1"]
+[editable path="CanvasGroup/ChooseNewBuildingScreen"]
+[editable path="CanvasGroup/ChooseNewBuildingScreen/NewBuildingOption"]
+[editable path="CanvasGroup/ChooseNewBuildingScreen/NewBuildingOption2"]
+[editable path="CanvasGroup/ChooseNewBuildingScreen/NewBuildingOption3"]
+[editable path="CanvasGroup/ChooseNewBuildingScreen/NewBuildingOption4"]
+[editable path="CanvasGroup/ChooseNewBuildingScreen/NewBuildingOption5"]
+[editable path="CanvasGroup/ChooseNewBuildingScreen/NewBuildingOption6"]
+[editable path="CanvasGroup/ChooseNewBuildingScreen/NewBuildingOption7"]
+[editable path="CanvasGroup/ChooseNewBuildingScreen/NewBuildingOption8"]
+[editable path="CanvasGroup/ChooseNewBuildingScreen/NewBuildingOption9"]
