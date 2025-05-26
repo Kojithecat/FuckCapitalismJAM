@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwy3vmav7ccnd"]
+[gd_scene load_steps=14 format=3 uid="uid://cwy3vmav7ccnd"]
 
 [ext_resource type="Texture2D" uid="uid://cvjyluc0n02bx" path="res://assets/Placeholders/ScreenChoseNewBuilding_placeholder.png" id="1_7yocn"]
 [ext_resource type="Script" uid="uid://cpsqvxv5ms8o2" path="res://Scripts/chooseBuildingController.gd" id="1_51tce"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://nnxr67tmeiar" path="res://assets/IconesLocals/bnb.png" id="9_olduo"]
 [ext_resource type="Texture2D" uid="uid://c8tp72de15rf1" path="res://assets/IconesLocals/brunch.jpg" id="10_7a1hi"]
 [ext_resource type="Texture2D" uid="uid://cbala5o2phy35" path="res://assets/IconesLocals/bet.png" id="11_kprxy"]
+[ext_resource type="AudioStream" uid="uid://cronjcmymo53b" path="res://assets/sound/cashier-sound.mp3" id="13_2fg7y"]
 
 [node name="ChooseNewBuildingScreen" type="Node2D"]
 scale = Vector2(1.5, 1.5)
@@ -128,6 +129,10 @@ price = 3000000
 
 [node name="Option1" parent="NewBuildingOption9" index="0"]
 icon = ExtResource("4_r4n0f")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_2fg7y")
+volume_db = 5.0
 
 [connection signal="pressed" from="ButtonConfirm" to="." method="onConfirm"]
 [connection signal="pressed" from="ButtonCancel" to="." method="onCancel"]

@@ -12,6 +12,7 @@ var monthlyIncome = 0
 
 func _ready() -> void:
 	$Timer.timeout.connect(_on_timer_timeout)
+	
 #Cada 10 segons pasa un mes
 
 func _on_timer_timeout():
@@ -19,8 +20,9 @@ func _on_timer_timeout():
 	#Increment del mes
 	$Date.increment_date()
 	#Guanyem l'income del mes 
-	$Money.increment_money(monthlyIncome)
-	
+	if(monthlyIncome > 0):
+		$Money.increment_money(monthlyIncome)
+		$AudioStreamPlayer2D.play()
 	# Your repeating code here
 
 func _process(delta):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjaaer4g8a6gw"]
+[gd_scene load_steps=12 format=3 uid="uid://bjaaer4g8a6gw"]
 
 [ext_resource type="Script" uid="uid://c1iuwc684ogay" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://d8bkxw8op8sv" path="res://Scripts/money.gd" id="2_3dryh"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dgf2ta6uyh6ak" path="res://sub_viewport.gd" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://dek0xvfrrdxtb" path="res://Scenes/BusinessMan.tscn" id="8_v158k"]
 [ext_resource type="PackedScene" uid="uid://scr3pbddnx5j" path="res://Scenes/desnonar_screen_demo1.tscn" id="9_h4fw4"]
+[ext_resource type="AudioStream" uid="uid://ccjet2vr1j8fi" path="res://assets/sound/passive-income.mp3" id="11_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://cwy3vmav7ccnd" path="res://Scenes/choose_new_building_screen.tscn" id="11_rku1e"]
 
 [node name="Game" type="Node2D"]
@@ -88,5 +89,10 @@ visible = false
 [node name="Timer" type="Timer" parent="."]
 wait_time = 7.0
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_o5yvi")
+volume_db = 3.0
+max_polyphony = 4
 
 [editable path="Map/Illa1"]

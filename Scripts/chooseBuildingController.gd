@@ -18,6 +18,7 @@ func handle_building_option_selected(newBuildingOptionNode):
 
 func onConfirm():
 	get_tree().call_group("gameController", "handle_new_building_selected", self)
+	$AudioStreamPlayer2D.play()
 	self.visible = false
 
 func onCancel():

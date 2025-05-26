@@ -50,6 +50,7 @@ func get_hist_num():
 	return str(scene_name)[-1]
 
 func onAcceptTermsAndConditions():
+	$AudioStreamPlayer2D.play()
 	get_tree().call_group("gameController", "handle_desnonar_confirmed")
 	self.visible = false
 
