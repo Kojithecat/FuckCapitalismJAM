@@ -4,7 +4,7 @@ extends Node2D
 @onready var sprite = $BusinessMan
 @onready var chooseBuilding = $CanvasGroup/ChooseNewBuildingScreen
 @onready var desnonar = $CanvasGroup/DesnonarScreen
-var buildingSelected = 0
+
 var localSelected = null
 var option = 0
 var counter = 1
@@ -18,10 +18,10 @@ func _ready() -> void:
 func _on_timer_timeout():
 	print("This happens every 5 seconds")
 	#Increment del mes
-	$Date.increment_date()
+	$PanelContainer4/MarginContainer/Date.increment_date()
 	#Guanyem l'income del mes 
 	if(monthlyIncome > 0):
-		$Money.increment_money(monthlyIncome)
+		$PanelContainer/MarginContainer/Money.increment_money(monthlyIncome)
 		$Income.play()
 	# Your repeating code here
 
@@ -45,14 +45,14 @@ func handle_desnonar_confirmed():
 
 #Rep la info del nou negoci (choose_new_building_screen), crida al local perque actualitzi les seves noves dades i gestiona diners
 func handle_new_building_selected(chooseNewBuildingNode):
-	if(chooseNewBuildingNode.newPrice + 10000 <= $Money.counter):
+	if(chooseNewBuildingNode.newPrice + 10000 <= $PanelContainer/MarginContainer/Money.counter):
 		localSelected.purchase_local(chooseNewBuildingNode.newName, chooseNewBuildingNode.newDesc, chooseNewBuildingNode.newRevenue)
 		monthlyIncome += chooseNewBuildingNode.newRevenue
-		$Money.decrement_money(chooseNewBuildingNode.newPrice)
+		$PanelContainer/MarginContainer/Money.decrement_money(chooseNewBuildingNode.newPrice)
 		# Cal ficar el preu local? Ja tenim el de desnonar i el del nou local $Money.decrement_money(localSelected.preu)
 		#Descontem el cost de desnonar
 		$ChaChing.play()
-		$Money.decrement_cost_desnonar()
+		$PanelContainer/MarginContainer/Money.decrement_cost_desnonar()
 		set_locals_enabled($Map, true)
 		counter += 1
 	else:

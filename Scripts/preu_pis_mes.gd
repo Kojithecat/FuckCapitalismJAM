@@ -13,6 +13,6 @@ func _process(delta: float) -> void:
 	update_display()
 
 func update_display():
-	var percentage: float = 100.0 * (get_parent().get_parent().get_parent().counter-1)/totalBuildings
-	var formatted = str("%.2f" % percentage)
-	self.text = formatted + "% touristification"
+	var percentage: float = 400 + 2000 * (get_parent().get_parent().get_parent().counter-1)/totalBuildings
+	var formatted = str("%.0f" % percentage)
+	self.text = "Rent price: " + formatted + "€/month"
