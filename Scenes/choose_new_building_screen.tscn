@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://cpsqvxv5ms8o2" path="res://Scripts/chooseBuildingController.gd" id="1_51tce"]
 [ext_resource type="Texture2D" uid="uid://c6eclvds1npe0" path="res://assets/IconesLocals/fastfood.png" id="4_dchqv"]
 [ext_resource type="Texture2D" uid="uid://chynl8fdug5hq" path="res://assets/IconesLocals/hotels.jpg" id="4_r4n0f"]
-[ext_resource type="Texture2D" uid="uid://cr4idukbmmd3r" path="res://assets/IconesLocals/cafe.webp" id="4_w4kkf"]
 [ext_resource type="PackedScene" uid="uid://3h0t6j8vpafq" path="res://Scenes/new_building_option.tscn" id="4_xkjal"]
 [ext_resource type="Texture2D" uid="uid://cmhxuig4tmd0x" path="res://assets/IconesLocals/souvenir.png" id="5_2fg7y"]
 [ext_resource type="Texture2D" uid="uid://dlsex4ydnivk5" path="res://assets/IconesLocals/money_eXchange.png" id="5_ujco6"]
+[ext_resource type="Texture2D" uid="uid://bkjfcrvjsevwb" path="res://assets/IconesLocals/cafe.png" id="6_dchqv"]
 [ext_resource type="Texture2D" uid="uid://dyv7c5xrd27gm" path="res://assets/IconesLocals/smash.jpeg" id="8_yeuof"]
 [ext_resource type="Texture2D" uid="uid://nnxr67tmeiar" path="res://assets/IconesLocals/bnb.png" id="9_olduo"]
 [ext_resource type="Texture2D" uid="uid://c8tp72de15rf1" path="res://assets/IconesLocals/brunch.jpg" id="10_7a1hi"]
@@ -67,7 +67,7 @@ revenue = 33000
 price = 300000
 
 [node name="Option1" parent="NewBuildingOption3" index="0"]
-icon = ExtResource("4_w4kkf")
+icon = ExtResource("6_dchqv")
 
 [node name="NewBuildingOption4" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-120, -48)
