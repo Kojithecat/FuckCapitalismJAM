@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjaaer4g8a6gw"]
+[gd_scene load_steps=16 format=3 uid="uid://bjaaer4g8a6gw"]
 
 [ext_resource type="Script" uid="uid://c1iuwc684ogay" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://d8bkxw8op8sv" path="res://Scripts/money.gd" id="2_3dryh"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://ccjet2vr1j8fi" path="res://assets/sound/passive-income.mp3" id="11_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://cwy3vmav7ccnd" path="res://Scenes/choose_new_building_screen.tscn" id="11_rku1e"]
 [ext_resource type="AudioStream" uid="uid://cronjcmymo53b" path="res://assets/sound/cashier-sound.mp3" id="12_rku1e"]
+[ext_resource type="PackedScene" uid="uid://ctkpxcgmpdrc5" path="res://Scenes/end_game_screen.tscn" id="15_nb51f"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_wrm1d")
@@ -55,6 +56,14 @@ position = Vector2(714, 378)
 scale = Vector2(0.251359, 0.232337)
 texture = ExtResource("5_wowpa")
 
+[node name="Button" type="Button" parent="Map/SagradaFamilia"]
+offset_left = 624.0
+offset_top = 296.0
+offset_right = 804.0
+offset_bottom = 456.0
+theme_type_variation = &"FlatButton"
+disabled = true
+
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 script = ExtResource("7_1l0tm")
@@ -74,6 +83,10 @@ visible = false
 [node name="ChooseNewBuildingScreen" parent="CanvasGroup" instance=ExtResource("11_rku1e")]
 visible = false
 
+[node name="EndGameScreen" parent="CanvasGroup" instance=ExtResource("15_nb51f")]
+visible = false
+position = Vector2(1, -2)
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
@@ -85,69 +98,71 @@ max_polyphony = 4
 [node name="ChaChing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_rku1e")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="WealthContainer" type="PanelContainer" parent="."]
 offset_left = 47.0
 offset_top = 22.0
 offset_right = 393.0
 offset_bottom = 158.0
 script = ExtResource("10_1phco")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="WealthContainer"]
 layout_mode = 2
 
-[node name="Money" type="Label" parent="PanelContainer/MarginContainer"]
+[node name="Money" type="Label" parent="WealthContainer/MarginContainer"]
 layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_3dryh")
 
-[node name="PanelContainer2" type="PanelContainer" parent="."]
+[node name="TouristificationContainer" type="PanelContainer" parent="."]
 offset_left = 21.0
 offset_top = 177.0
 offset_right = 437.0
 offset_bottom = 261.0
 script = ExtResource("10_1phco")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="TouristificationContainer"]
 layout_mode = 2
 
-[node name="Percentage" type="Label" parent="PanelContainer2/MarginContainer"]
+[node name="Percentage" type="Label" parent="TouristificationContainer/MarginContainer"]
 layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_wowpa")
 
-[node name="PanelContainer3" type="PanelContainer" parent="."]
+[node name="RentContainer" type="PanelContainer" parent="."]
 offset_left = 23.0
 offset_top = 272.0
 offset_right = 435.0
 offset_bottom = 360.0
 script = ExtResource("10_1phco")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer3"]
+[node name="MarginContainer" type="MarginContainer" parent="RentContainer"]
 layout_mode = 2
 
-[node name="PreuPisMes" type="Label" parent="PanelContainer3/MarginContainer"]
+[node name="PreuPisMes" type="Label" parent="RentContainer/MarginContainer"]
 layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_rfjv2")
 
-[node name="PanelContainer4" type="PanelContainer" parent="."]
-offset_left = 443.0
-offset_top = 12.0
-offset_right = 954.0
-offset_bottom = 74.0
+[node name="TimerContainer" type="PanelContainer" parent="."]
+offset_left = 456.0
+offset_top = 24.0
+offset_right = 967.0
+offset_bottom = 86.0
 script = ExtResource("10_1phco")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer4"]
+[node name="MarginContainer" type="MarginContainer" parent="TimerContainer"]
 layout_mode = 2
 
-[node name="Date" type="Label" parent="PanelContainer4/MarginContainer"]
+[node name="Date" type="Label" parent="TimerContainer/MarginContainer"]
 layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_ldgsr")
+
+[connection signal="pressed" from="Map/SagradaFamilia/Button" to="." method="on_sagrada_familia_selected"]
 
 [editable path="Map/Illa1"]
 [editable path="CanvasGroup/ChooseNewBuildingScreen"]

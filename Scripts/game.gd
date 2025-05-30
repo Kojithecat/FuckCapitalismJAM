@@ -8,20 +8,21 @@ extends Node2D
 var localSelected = null
 var option = 0
 var counter = 1
+var totalLocalNum = 24
 var monthlyIncome = 0
+var endGameUnlocked = false
 
+#Cada 10 segons pasa un mes
 func _ready() -> void:
 	$Timer.timeout.connect(_on_timer_timeout)
-	
-#Cada 10 segons pasa un mes
 
 func _on_timer_timeout():
 	print("This happens every 5 seconds")
 	#Increment del mes
-	$PanelContainer4/MarginContainer/Date.increment_date()
+	$TimerContainer/MarginContainer/Date.increment_date()
 	#Guanyem l'income del mes 
 	if(monthlyIncome > 0):
-		$PanelContainer/MarginContainer/Money.increment_money(monthlyIncome)
+		$WealthContainer/MarginContainer/Money.increment_money(monthlyIncome)
 		$Income.play()
 	# Your repeating code here
 
@@ -37,7 +38,7 @@ func handle_local_selected(localNode):
 	desnonar.visible = true
 	set_locals_enabled($Map, false)
 	desnonar.load_data(localNode.nameOg, localNode.descriptionOg, localNode.preu)
-	
+
 #Rep avís que la pantalla de desnonar s'ha confirmat i activa la de triar nou negoci
 func handle_desnonar_confirmed():
 	desnonar.visible = false;
@@ -45,22 +46,25 @@ func handle_desnonar_confirmed():
 
 #Rep la info del nou negoci (choose_new_building_screen), crida al local perque actualitzi les seves noves dades i gestiona diners
 func handle_new_building_selected(chooseNewBuildingNode):
-	if(chooseNewBuildingNode.newPrice + 10000 <= $PanelContainer/MarginContainer/Money.counter):
+	if(chooseNewBuildingNode.newPrice + 10000 <= $WealthContainer/MarginContainer/Money.counter):
 		localSelected.purchase_local(chooseNewBuildingNode.newName, chooseNewBuildingNode.newDesc, chooseNewBuildingNode.newRevenue)
 		monthlyIncome += chooseNewBuildingNode.newRevenue
-		$PanelContainer/MarginContainer/Money.decrement_money(chooseNewBuildingNode.newPrice)
+		$WealthContainer/MarginContainer/Money.decrement_money(chooseNewBuildingNode.newPrice)
 		# Cal ficar el preu local? Ja tenim el de desnonar i el del nou local $Money.decrement_money(localSelected.preu)
 		#Descontem el cost de desnonar
 		$ChaChing.play()
-		$PanelContainer/MarginContainer/Money.decrement_cost_desnonar()
+		$WealthContainer/MarginContainer/Money.decrement_cost_desnonar()
 		set_locals_enabled($Map, true)
 		counter += 1
+		if(counter >= totalLocalNum): 
+			unlock_endgame()
 	else:
 		#TODO Hem de fer handle per quan no tinguem prous diners (T'ho financia la familia, herencia, ajuda del banc, etc)
 		print("No tens prous diners")
 		#Descontar el cost del local en funció del local
 	set_locals_enabled($Map, true)
 
+#En ordre, carrega el json corresponent al local que s'hagi seleccionat
 func chooseAndLoadLocal(localNode):
 	if counter <= 24:
 		var file_path = "res://assets/Locals/" + str(counter) + ".json"
@@ -70,6 +74,7 @@ func chooseAndLoadLocal(localNode):
 	else:
 		print("S'han comprat tots els locals")
 
+#On cancel any of the form screens
 func onCancel():
 	set_locals_enabled($Map, true)
 
@@ -79,3 +84,18 @@ func set_locals_enabled(node, enabled):
 		if child is Button:
 			child.disabled = !enabled
 		set_locals_enabled(child, enabled) # Recursive call
+
+#Desbloqueja la Sagrada Familia
+func unlock_endgame():
+	print("Endgame has been unlocked!")
+	endGameUnlocked = true
+	$Map/SagradaFamilia/Button.disabled = false
+
+#Rep l'avís del botó de la sagrada familia
+func on_sagrada_familia_selected():
+	$CanvasGroup/EndGameScreen.visible = true
+
+#Rep l'avís de la pantalla end_game_scene i deshabilita la sagrada familia
+func on_confirm_sagrada_familia():
+	print("confirm safa")
+	$Map/SagradaFamilia/Button.disabled = true
