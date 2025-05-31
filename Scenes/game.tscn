@@ -200,6 +200,7 @@ offset_top = -93.0
 offset_right = 420.0
 offset_bottom = 419.0
 scale = Vector2(0.36, 0.36)
+disabled = true
 texture_normal = ExtResource("3_nnt18")
 
 [node name="ParkingFinal" type="Sprite2D" parent="Map/SagradaFamilia"]
