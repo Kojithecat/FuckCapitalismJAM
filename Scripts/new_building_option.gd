@@ -8,7 +8,6 @@ extends Node2D
 func _ready() -> void:
 	#S'haurà de moure a load_init_data això
 	$Nom.text = nomNewBuilding
-	$Desc.text = descNewBuilding
 	$Price.text = str(price) + " $"
 	$Revenue.text = str(revenue) + " $/month"
 
