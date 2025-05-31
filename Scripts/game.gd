@@ -61,6 +61,11 @@ func handle_new_building_selected(chooseNewBuildingNode):
 	else:
 		#TODO Hem de fer handle per quan no tinguem prous diners (T'ho financia la familia, herencia, ajuda del banc, etc)
 		print("No tens prous diners")
+		$ErrorContainer.visible = true
+		# Wait for 2 seconds
+		await get_tree().create_timer(5.0).timeout
+		# Hide again
+		$ErrorContainer.visible = false
 		#Descontar el cost del local en funció del local
 	set_locals_enabled($Map, true)
 

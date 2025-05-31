@@ -1,17 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://3h0t6j8vpafq"]
+[gd_scene load_steps=6 format=3 uid="uid://3h0t6j8vpafq"]
 
 [ext_resource type="Texture2D" uid="uid://b14qg02grftmd" path="res://assets/McD.webp" id="1_axgbj"]
 [ext_resource type="Script" uid="uid://c2yx7invi7vx8" path="res://Scripts/new_building_option.gd" id="1_ci2g1"]
+[ext_resource type="Script" uid="uid://dm6sipp0hf061" path="res://Scripts/panel_icones.gd" id="3_f7iut"]
+
+[sub_resource type="Theme" id="Theme_fky1s"]
 
 [sub_resource type="Theme" id="Theme_ci2g1"]
 
 [node name="NewBuildingOption" type="Node2D"]
 script = ExtResource("1_ci2g1")
 
-[node name="Option1" type="Button" parent="."]
-offset_right = 117.0
-offset_bottom = 90.0001
-scale = Vector2(1.225, 1.225)
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 16.0
+offset_right = 124.0
+offset_bottom = 109.0
+theme = SubResource("Theme_fky1s")
+script = ExtResource("3_f7iut")
+
+[node name="Option1" type="Button" parent="PanelContainer"]
+layout_mode = 2
 toggle_mode = true
 icon = ExtResource("1_axgbj")
 flat = true
@@ -19,40 +27,34 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Nom" type="Label" parent="."]
-offset_left = 22.0
+offset_left = 2.0
 offset_top = 107.0
-offset_right = 62.0
+offset_right = 140.0
 offset_bottom = 130.0
 theme = SubResource("Theme_ci2g1")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "NOM 1"
-
-[node name="Desc" type="Label" parent="."]
-offset_left = 23.0
-offset_top = 128.0
-offset_right = 116.0
-offset_bottom = 151.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "DESCRIPCIÓ 1"
+horizontal_alignment = 1
 
 [node name="Price" type="Label" parent="."]
-offset_left = 73.0
-offset_top = 154.0
-offset_right = 115.0
-offset_bottom = 177.0
+offset_left = 16.0
+offset_top = 124.0
+offset_right = 124.0
+offset_bottom = 147.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.427942, 0.110884, 0.13124, 1)
+theme_override_colors/font_outline_color = Color(0.445973, 0.102271, 0.0478248, 1)
 text = "20"
+horizontal_alignment = 1
 
 [node name="Revenue" type="Label" parent="."]
-offset_left = 72.0
-offset_top = 175.0
-offset_right = 113.0
-offset_bottom = 198.0
+offset_left = 16.0
+offset_top = 140.0
+offset_right = 124.0
+offset_bottom = 163.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.0487267, 0.31371, 0, 1)
+theme_override_colors/font_outline_color = Color(6.01634e-08, 0.325531, 0.135071, 1)
 text = "20"
 
-[connection signal="pressed" from="Option1" to="." method="onSelect"]
+[connection signal="pressed" from="PanelContainer/Option1" to="." method="onSelect"]

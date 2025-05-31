@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cwy3vmav7ccnd"]
+[gd_scene load_steps=18 format=3 uid="uid://cwy3vmav7ccnd"]
 
 [ext_resource type="Texture2D" uid="uid://cvjyluc0n02bx" path="res://assets/Placeholders/ScreenChoseNewBuilding_placeholder.png" id="1_7yocn"]
 [ext_resource type="Script" uid="uid://cpsqvxv5ms8o2" path="res://Scripts/chooseBuildingController.gd" id="1_51tce"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://nnxr67tmeiar" path="res://assets/IconesLocals/bnb.png" id="9_olduo"]
 [ext_resource type="Texture2D" uid="uid://c8tp72de15rf1" path="res://assets/IconesLocals/brunch.jpg" id="10_7a1hi"]
 [ext_resource type="Texture2D" uid="uid://cbala5o2phy35" path="res://assets/IconesLocals/bet.png" id="11_kprxy"]
+[ext_resource type="Script" uid="uid://c857k1yy8gbbj" path="res://Scripts/labelChooseBuildings.gd" id="13_2fg7y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dchqv"]
 bg_color = Color(0.341176, 1, 0.341176, 1)
@@ -39,10 +40,10 @@ visible = false
 texture = ExtResource("1_7yocn")
 
 [node name="ButtonConfirm" type="Button" parent="."]
-offset_left = 96.0
-offset_top = 184.0
-offset_right = 167.0
-offset_bottom = 215.0
+offset_left = 108.0
+offset_top = 211.0
+offset_right = 179.0
+offset_bottom = 242.0
 theme_override_styles/disabled = SubResource("StyleBoxFlat_dchqv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fg7y")
 disabled = true
@@ -50,102 +51,111 @@ text = "Confirm"
 
 [node name="ButtonCancel" type="Button" parent="."]
 offset_left = 16.0
-offset_top = 184.0
+offset_top = 212.0
 offset_right = 87.0
-offset_bottom = 215.0
+offset_bottom = 243.0
 theme_override_styles/disabled = SubResource("StyleBoxFlat_yeuof")
 theme_override_styles/normal = SubResource("StyleBoxFlat_olduo")
 text = "Cancel"
 
 [node name="NewBuildingOption" parent="." instance=ExtResource("4_xkjal")]
-position = Vector2(-120, -136)
-scale = Vector2(0.395, 0.395)
+position = Vector2(-153, -187)
+scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Fast Food"
 revenue = 10000
 price = 100000
 
-[node name="Option1" parent="NewBuildingOption" index="0"]
+[node name="Option1" parent="NewBuildingOption/PanelContainer" index="0"]
 icon = ExtResource("4_dchqv")
 
 [node name="NewBuildingOption2" parent="." instance=ExtResource("4_xkjal")]
-position = Vector2(-32, -136)
-scale = Vector2(0.395, 0.395)
+position = Vector2(-43, -187)
+scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Souvenir Shop"
 revenue = 20000
 price = 200000
 
-[node name="Option1" parent="NewBuildingOption2" index="0"]
+[node name="Option1" parent="NewBuildingOption2/PanelContainer" index="0"]
 icon = ExtResource("5_2fg7y")
 
 [node name="NewBuildingOption3" parent="." instance=ExtResource("4_xkjal")]
-position = Vector2(56, -136)
-scale = Vector2(0.395, 0.395)
+position = Vector2(68, -187)
+scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Café especialidad"
 revenue = 33000
 price = 300000
 
-[node name="Option1" parent="NewBuildingOption3" index="0"]
+[node name="Option1" parent="NewBuildingOption3/PanelContainer" index="0"]
 icon = ExtResource("6_dchqv")
 
 [node name="NewBuildingOption4" parent="." instance=ExtResource("4_xkjal")]
-position = Vector2(-120, -48)
-scale = Vector2(0.395, 0.395)
+position = Vector2(-153, -57)
+scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Money eXchange"
 revenue = 60000
 price = 500000
 
-[node name="Option1" parent="NewBuildingOption4" index="0"]
+[node name="Option1" parent="NewBuildingOption4/PanelContainer" index="0"]
 icon = ExtResource("5_ujco6")
 
 [node name="NewBuildingOption5" parent="." instance=ExtResource("4_xkjal")]
-position = Vector2(-32, -48)
-scale = Vector2(0.395, 0.395)
+position = Vector2(-43, -57)
+scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Smash burger"
 revenue = 85000
 price = 700000
 
-[node name="Option1" parent="NewBuildingOption5" index="0"]
+[node name="Option1" parent="NewBuildingOption5/PanelContainer" index="0"]
 icon = ExtResource("8_yeuof")
 
 [node name="NewBuildingOption6" parent="." instance=ExtResource("4_xkjal")]
-position = Vector2(56, -48)
-scale = Vector2(0.395, 0.395)
+position = Vector2(68, -57)
+scale = Vector2(0.75, 0.75)
 nomNewBuilding = "b&b"
 revenue = 125000
 price = 1000000
 
-[node name="Option1" parent="NewBuildingOption6" index="0"]
+[node name="Option1" parent="NewBuildingOption6/PanelContainer" index="0"]
 icon = ExtResource("9_olduo")
 
 [node name="NewBuildingOption7" parent="." instance=ExtResource("4_xkjal")]
-position = Vector2(-120, 32)
-scale = Vector2(0.395, 0.395)
+position = Vector2(-153, 73)
+scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Avocado brunch"
 revenue = 200000
 price = 1500000
 
-[node name="Option1" parent="NewBuildingOption7" index="0"]
+[node name="Option1" parent="NewBuildingOption7/PanelContainer" index="0"]
 icon = ExtResource("10_7a1hi")
 
 [node name="NewBuildingOption8" parent="." instance=ExtResource("4_xkjal")]
-position = Vector2(-32, 32)
-scale = Vector2(0.395, 0.395)
+position = Vector2(-43, 73)
+scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Bet Bet Bet"
 revenue = 280000
 price = 2000000
 
-[node name="Option1" parent="NewBuildingOption8" index="0"]
+[node name="Option1" parent="NewBuildingOption8/PanelContainer" index="0"]
 icon = ExtResource("11_kprxy")
 
 [node name="NewBuildingOption9" parent="." instance=ExtResource("4_xkjal")]
-position = Vector2(56, 32)
-scale = Vector2(0.395, 0.395)
+position = Vector2(68, 73)
+scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Hotel HolyFam"
 revenue = 440000
 price = 3000000
 
-[node name="Option1" parent="NewBuildingOption9" index="0"]
+[node name="Option1" parent="NewBuildingOption9/PanelContainer" index="0"]
 icon = ExtResource("4_r4n0f")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -152.0
+offset_top = -240.0
+offset_right = 168.0
+offset_bottom = -217.0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("13_2fg7y")
 
 [connection signal="pressed" from="ButtonConfirm" to="." method="onConfirm"]
 [connection signal="pressed" from="ButtonCancel" to="." method="onCancel"]
