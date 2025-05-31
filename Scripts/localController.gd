@@ -32,7 +32,7 @@ func _ready():
 		var file_path = "res://assets/NegocisTxts/" + str(negociId) + ".json"
 		var json_as_text = FileAccess.get_file_as_string(file_path)
 		var json_as_dict = JSON.parse_string(json_as_text)
-		load_init_data(json_as_dict["name"], json_as_dict["desc"], json_as_dict["preu"])
+		load_init_data(json_as_dict["nameENG"], json_as_dict["descENG"], json_as_dict["preu"])
 	
 	elif(isParc && parcId!=null):
 		var file_path = "res://assets/ParcsTxts/" + str(parcId) + ".json"
@@ -51,7 +51,7 @@ func on_local_pressed() -> void:
 	else:
 		#TODO s'hauria de mostrar una altra pantalla amb la nova info, que sigui només de consulta
 		print("El local ja ha estat desnonat")	
-	
+
 func purchase_local(newName: String, newDesc: String, newRevenue: int, newIconNegoci: CompressedTexture2D, newSpriteParc: CompressedTexture2D):
 	nameNew = newName
 	descriptionNew = newDesc

@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://bav8optq5ci0q"]
+
+[ext_resource type="Script" uid="uid://du2cf4uepa6bu" path="res://Scenes/start_screen.gd" id="1_c1in8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8om7"]
+bg_color = Color(0, 1, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c1in8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -48.0
+offset_right = 452.0
+offset_bottom = 300.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 23.0
+offset_right = 390.0
+offset_bottom = 223.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+text = "Hey there champ! The day is finally here. Daddy sent you some of that sweet sweet pocket money so you can finally start making something of yourself.
+
+And look at this! A perfectly normal, boring neighbourhood in Barcelona (around the Sagrada Familia, no less!) just waiting to be turned into the tourist trap money maker we all know it could (and should) be.
+
+All it needs is a hard worker with a vision and some extra cash lying around. You got this boss!"
+
+[node name="ButtonConfirm" type="Button" parent="."]
+offset_left = 144.0
+offset_top = 232.0
+offset_right = 245.0
+offset_bottom = 263.0
+theme_override_colors/font_color = Color(0.08, 0.08, 0.08, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_o8om7")
+text = "Let's do this"
+
+[connection signal="pressed" from="ButtonConfirm" to="." method="onConfirm"]
