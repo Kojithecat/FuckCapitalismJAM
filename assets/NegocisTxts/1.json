@@ -1,5 +1,7 @@
 {
 	"name": "Ferreteria Torres",
-	"desc": "Tenim cansalada: la millor. Tenim choriços: no tenen comparació. Tenim vedella: et guardem el millor troç. No et perdis la carn del escorxador de Mataró, un cop la tastis tornaràs a Jacobià.",
-	"preu": 10	
+	"nameENG": "Torres' Hardware Store",
+	"desc": "Les millors eines del barri les trobaràs aquí. Qualsevol problema que tinguis es pot solucionar amb els materials i eines adequats. També tenim servei tècnic a domicili per si et vols estalviar els estris. Arreglem: vàters, piques, rentadores i neveres. Truca'ns!",
+	"descENG": "You'll find the best tools in the neighborhood here. Any problem you have can be solved with the right materials and tools. We also have home service if you want to save on tools. We fix: toilets, sinks, washing machines and refrigerators. Call us!",
+	"preu": "10000€"
 }

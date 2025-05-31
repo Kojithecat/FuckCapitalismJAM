@@ -1,5 +1,7 @@
 {
-	"name": "Georgina Masó 13",
-	"desc": "La Georgina porta 52 anys vivint aquí. En aquest pis han crescut els seus fills i fins i tot han arribat a estar-hi els seus nets. Ara no li han doar altre opció que vendre-ho tot per una miseria.",
-	"preu": 50
+	"name": "La família Serrasolsaina",
+	"desc": "Una família d’allò més interessant, els pares es van conèixer a la universitat, i els seus fills han sortit molt diferents. Un és físic, entusiasta de la vida i molt divertit. L'altra és una experta en literatura catalana i una persona amb qui pots xerrar de tot.",
+	"descENG": "A truly fascinating family. The parents met in university, and their children turned out very different—one is a physicist, full of enthusiasm for life and very funny. The other is an expert in Catalan
+literature and someone you can talk to about anything.",
+	"preu": "10000€"
 }

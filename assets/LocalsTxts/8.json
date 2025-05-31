@@ -1,5 +1,6 @@
 {
-	"name": "Georgina Masó 8",
-	"desc": "La Georgina porta 52 anys vivint aquí. En aquest pis han crescut els seus fills i fins i tot han arribat a estar-hi els seus nets. Ara no li han doar altre opció que vendre-ho tot per una miseria.",
-	"preu": 50
+	"name": "Jordi Peralta",
+	"desc": "En Jordi és un senyor de 75 anys que viu tot sol. La seva dona fa anys que és morta i des de llavors, la vida d’en Jordi es va tornar monòtona. Els seus fills el visiten un cop al mes i ho fan més per obligació que per gust de veure al seu pare. L’únic consol que té és el seu gos Roc, amb el que es passeja pel parcs del barri cada matí i vespre.",
+	"descENG": "Jordi is a 75-year-old man who lives alone. His wife passed away years ago, and since then, his life has become monotonous. His children visit him once a month, more out of obligation than a real desire to see their father. His only comfort is his dog, Roc, who he walks through the neighborhood parks every morning and evening.",
+	"preu": "10000€"
 }
