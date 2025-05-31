@@ -1,5 +1,7 @@
 {
 	"name": "Fruiteria Gaudí",
-	"desc": "Tenim cansalada: la millor. Tenim choriços: no tenen comparació. Tenim vedella: et guardem el millor troç. No et perdis la carn del escorxador de Mataró, un cop la tastis tornaràs a Jacobià.",
-	"preu": 10	
+	"nameENG": "Gaudí Fruit",
+	"desc": "La millor fruita i verdura que trobaràs! Aquesta fruiteria ja era oberta a les Olimpíades de Barcelona del 92. Oferim la millor qualitat de fruites i verdures tant autòctones com exòtiques. Hem començat a importar mango, papaya i chirimoya, no ho trobaràs enlloc més!",
+	"descENG": "The best fruit and vegetables you will find! This fruit shop was already open for the ‘92 Barcelona Olympics. We offer the best quality of both native and exotic fruits and vegetables. We have even started to carry mango, papaya and cherimoya, you won't find them anywhere else!",
+	"preu": "10000€"
 }
