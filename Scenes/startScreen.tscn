@@ -24,24 +24,26 @@ offset_bottom = 300.0
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = -8.0
-offset_top = 40.0
+offset_top = 25.0
 offset_right = 412.0
-offset_bottom = 240.0
+offset_bottom = 275.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_nwqh5")
 theme_override_font_sizes/normal_font_size = 14
-text = "Hey there champ! The day is finally here. Daddy sent you some of that sweet sweet pocket money so you can finally start making something of yourself.
+text = "Hey there champ! The day is finally here. 
 
-And look at this! A perfectly normal, boring neighbourhood in Barcelona (around the Sagrada Familia, no less!) just waiting to be turned into the tourist trap money maker we all know it could (and should) be.
+Daddy’s wired you some of that sweet, sweet pocket change — time to stop “finding yourself” and start building your legacy.
+
+And would you look at that! A perfectly normal, boring neighbourhood in Barcelona (around the Sagrada Familia, no less!) just waiting to be turned into the tourist trap money maker we all know it could — and should — be.
 
 All it needs is a hard worker with a vision and some extra cash lying around. You got this boss!"
 
 [node name="ButtonConfirm" type="Button" parent="."]
 layout_mode = 0
 offset_left = 144.0
-offset_top = 240.0
+offset_top = 244.0
 offset_right = 245.0
-offset_bottom = 271.0
+offset_bottom = 275.0
 theme_override_colors/font_color = Color(0.08, 0.08, 0.08, 1)
 theme_override_fonts/font = ExtResource("2_nwqh5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_o8om7")

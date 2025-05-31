@@ -45,6 +45,8 @@ offset_left = 108.0
 offset_top = 211.0
 offset_right = 179.0
 offset_bottom = 242.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_yeuof")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_dchqv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fg7y")
@@ -56,6 +58,8 @@ offset_left = 16.0
 offset_top = 212.0
 offset_right = 87.0
 offset_bottom = 243.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_yeuof")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_yeuof")
 theme_override_styles/normal = SubResource("StyleBoxFlat_olduo")
@@ -71,15 +75,6 @@ price = 100000
 [node name="Option1" parent="Fastfood/PanelContainer" index="0"]
 icon = ExtResource("4_2fg7y")
 
-[node name="Nom" parent="Fastfood" index="1"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Price" parent="Fastfood" index="2"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Revenue" parent="Fastfood" index="3"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
 [node name="Souvenir" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-43, -187)
 scale = Vector2(0.75, 0.75)
@@ -89,15 +84,6 @@ price = 200000
 
 [node name="Option1" parent="Souvenir/PanelContainer" index="0"]
 icon = ExtResource("5_yeuof")
-
-[node name="Nom" parent="Souvenir" index="1"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Price" parent="Souvenir" index="2"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Revenue" parent="Souvenir" index="3"]
-theme_override_fonts/font = ExtResource("3_yeuof")
 
 [node name="Cafe" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(68, -187)
@@ -109,15 +95,6 @@ price = 300000
 [node name="Option1" parent="Cafe/PanelContainer" index="0"]
 icon = ExtResource("6_olduo")
 
-[node name="Nom" parent="Cafe" index="1"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Price" parent="Cafe" index="2"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Revenue" parent="Cafe" index="3"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
 [node name="MoneyExchange" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-153, -57)
 scale = Vector2(0.75, 0.75)
@@ -127,15 +104,6 @@ price = 500000
 
 [node name="Option1" parent="MoneyExchange/PanelContainer" index="0"]
 icon = ExtResource("7_7a1hi")
-
-[node name="Nom" parent="MoneyExchange" index="1"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Price" parent="MoneyExchange" index="2"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Revenue" parent="MoneyExchange" index="3"]
-theme_override_fonts/font = ExtResource("3_yeuof")
 
 [node name="Burger" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-43, -57)
@@ -147,15 +115,6 @@ price = 700000
 [node name="Option1" parent="Burger/PanelContainer" index="0"]
 icon = ExtResource("8_kprxy")
 
-[node name="Nom" parent="Burger" index="1"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Price" parent="Burger" index="2"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Revenue" parent="Burger" index="3"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
 [node name="b&b" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(68, -57)
 scale = Vector2(0.75, 0.75)
@@ -165,15 +124,6 @@ price = 1000000
 
 [node name="Option1" parent="b&b/PanelContainer" index="0"]
 icon = ExtResource("9_iyb1l")
-
-[node name="Nom" parent="b&b" index="1"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Price" parent="b&b" index="2"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Revenue" parent="b&b" index="3"]
-theme_override_fonts/font = ExtResource("3_yeuof")
 
 [node name="Brunch" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-153, 73)
@@ -185,15 +135,6 @@ price = 1500000
 [node name="Option1" parent="Brunch/PanelContainer" index="0"]
 icon = ExtResource("10_tftjh")
 
-[node name="Nom" parent="Brunch" index="1"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Price" parent="Brunch" index="2"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Revenue" parent="Brunch" index="3"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
 [node name="Bet" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-43, 73)
 scale = Vector2(0.75, 0.75)
@@ -204,15 +145,6 @@ price = 2000000
 [node name="Option1" parent="Bet/PanelContainer" index="0"]
 icon = ExtResource("11_kprxy")
 
-[node name="Nom" parent="Bet" index="1"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Price" parent="Bet" index="2"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Revenue" parent="Bet" index="3"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
 [node name="Hotel" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(68, 73)
 scale = Vector2(0.75, 0.75)
@@ -222,15 +154,6 @@ price = 3000000
 
 [node name="Option1" parent="Hotel/PanelContainer" index="0"]
 icon = ExtResource("12_l67o0")
-
-[node name="Nom" parent="Hotel" index="1"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Price" parent="Hotel" index="2"]
-theme_override_fonts/font = ExtResource("3_yeuof")
-
-[node name="Revenue" parent="Hotel" index="3"]
-theme_override_fonts/font = ExtResource("3_yeuof")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -152.0

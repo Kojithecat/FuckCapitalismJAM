@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://bjaaer4g8a6gw"]
+[gd_scene load_steps=29 format=3 uid="uid://bjaaer4g8a6gw"]
 
 [ext_resource type="Script" uid="uid://c1iuwc684ogay" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://d8bkxw8op8sv" path="res://Scripts/money.gd" id="2_3dryh"]
+[ext_resource type="Texture2D" uid="uid://d2iwfts1pkmdy" path="res://assets/background/carreteres_v2.png" id="2_tgy6u"]
 [ext_resource type="Texture2D" uid="uid://c0najfibheeo0" path="res://assets/Parcs/park2.png" id="3_85qyi"]
 [ext_resource type="Texture2D" uid="uid://418xd1ovwj2g" path="res://assets/sagradafamilia_icon.png" id="3_nnt18"]
 [ext_resource type="Script" uid="uid://dseuup1saf4vf" path="res://Scripts/percentatge.gd" id="3_wowpa"]
@@ -20,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bkv43ihlvy6lt" path="res://assets/Parcs/parking_gran.png" id="10_vm72l"]
 [ext_resource type="AudioStream" uid="uid://ccjet2vr1j8fi" path="res://assets/sound/passive-income.mp3" id="11_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://cwy3vmav7ccnd" path="res://Scenes/choose_new_building_screen.tscn" id="11_rku1e"]
+[ext_resource type="Texture2D" uid="uid://cfpf8bsqup1vs" path="res://assets/background/arbres_v2.png" id="12_cwurv"]
 [ext_resource type="AudioStream" uid="uid://cronjcmymo53b" path="res://assets/sound/cashier-sound.mp3" id="12_rku1e"]
 [ext_resource type="PackedScene" uid="uid://cot4dwwwbxe02" path="res://Scenes/choose_new_building_parc_screen.tscn" id="14_mg4q0"]
 [ext_resource type="PackedScene" uid="uid://ctkpxcgmpdrc5" path="res://Scenes/end_game_screen.tscn" id="15_nb51f"]
@@ -36,10 +38,14 @@ script = ExtResource("1_wrm1d")
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(32.08, 18.2)
-color = Color(0.544, 0.64, 0.5952, 1)
+color = Color(0.552941, 0.635294, 0.270588, 1)
+
+[node name="Background" type="Sprite2D" parent="Map"]
+position = Vector2(717, 370)
+texture = ExtResource("2_tgy6u")
 
 [node name="Illa1" parent="Map" instance=ExtResource("4_o5yvi")]
-position = Vector2(519, 178)
+position = Vector2(556, 194)
 
 [node name="Control" parent="Map/Illa1" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -57,7 +63,7 @@ texture_hover = null
 position = Vector2(16, 40)
 
 [node name="Illa2" parent="Map" instance=ExtResource("4_o5yvi")]
-position = Vector2(711, 178)
+position = Vector2(715, 194)
 
 [node name="LocalBottom" parent="Map/Illa2" index="5"]
 isNegoci = true
@@ -72,7 +78,7 @@ texture_hover = null
 position = Vector2(16, 40)
 
 [node name="Illa3" parent="Map" instance=ExtResource("4_o5yvi")]
-position = Vector2(903, 178)
+position = Vector2(876, 194)
 
 [node name="LocalBottom" parent="Map/Illa3" index="5"]
 isNegoci = true
@@ -87,7 +93,7 @@ texture_hover = null
 position = Vector2(16, 40)
 
 [node name="ParcLeft" parent="Map" instance=ExtResource("4_o5yvi")]
-position = Vector2(519, 370)
+position = Vector2(554, 372)
 
 [node name="Sprite2D" parent="Map/ParcLeft" index="1"]
 visible = false
@@ -117,7 +123,7 @@ texture_disabled = ExtResource("5_7t8sx")
 position = Vector2(16, 40)
 
 [node name="ParcRight" parent="Map" instance=ExtResource("4_o5yvi")]
-position = Vector2(903, 370)
+position = Vector2(878, 371)
 
 [node name="Sprite2D" parent="Map/ParcRight" index="1"]
 visible = false
@@ -147,7 +153,7 @@ texture_disabled = ExtResource("6_exi56")
 position = Vector2(16, 40)
 
 [node name="Illa6" parent="Map" instance=ExtResource("4_o5yvi")]
-position = Vector2(519, 562)
+position = Vector2(557, 545)
 
 [node name="LocalBottom" parent="Map/Illa6" index="5"]
 isNegoci = true
@@ -162,7 +168,7 @@ texture_hover = null
 position = Vector2(16, 40)
 
 [node name="Illa7" parent="Map" instance=ExtResource("4_o5yvi")]
-position = Vector2(711, 562)
+position = Vector2(717, 546)
 
 [node name="LocalBottom" parent="Map/Illa7" index="5"]
 isNegoci = true
@@ -177,7 +183,7 @@ texture_hover = null
 position = Vector2(16, 40)
 
 [node name="Illa8" parent="Map" instance=ExtResource("4_o5yvi")]
-position = Vector2(903, 562)
+position = Vector2(876, 546)
 
 [node name="LocalBottom" parent="Map/Illa8" index="5"]
 isNegoci = true
@@ -207,6 +213,10 @@ texture_normal = ExtResource("3_nnt18")
 visible = false
 texture = ExtResource("10_vm72l")
 
+[node name="Arbres" type="Sprite2D" parent="Map"]
+position = Vector2(717, 370)
+texture = ExtResource("12_cwurv")
+
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 script = ExtResource("7_1l0tm")
@@ -222,21 +232,24 @@ position = Vector2(711, 370)
 
 [node name="DesnonarScreen" parent="CanvasGroup" instance=ExtResource("9_h4fw4")]
 visible = false
+position = Vector2(0, -11)
 
 [node name="ChooseNewBuildingScreen" parent="CanvasGroup" instance=ExtResource("11_rku1e")]
 visible = false
+position = Vector2(0, -11)
 
 [node name="ChooseNewBuildingParcScreen" parent="CanvasGroup" instance=ExtResource("14_mg4q0")]
 visible = false
+position = Vector2(0, -11)
 
 [node name="EndGameScreen" parent="CanvasGroup" instance=ExtResource("15_nb51f")]
 visible = false
-position = Vector2(1, -2)
+position = Vector2(4, -2)
 
 [node name="StartGameScreen" parent="CanvasGroup" instance=ExtResource("17_22asu")]
-offset_left = -199.0
+offset_left = -195.0
 offset_top = -162.0
-offset_right = -199.0
+offset_right = -195.0
 offset_bottom = -162.0
 
 [node name="Timer" type="Timer" parent="."]
@@ -302,9 +315,9 @@ vertical_alignment = 1
 script = ExtResource("4_rfjv2")
 
 [node name="TimerContainer" type="PanelContainer" parent="."]
-offset_left = 456.0
+offset_left = 461.0
 offset_top = 24.0
-offset_right = 967.0
+offset_right = 972.0
 offset_bottom = 86.0
 script = ExtResource("10_1phco")
 

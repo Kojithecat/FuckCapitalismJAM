@@ -80,6 +80,7 @@ func handle_new_building_selected(chooseNewBuildingNode):
 
 #En ordre, carrega el json corresponent al local que s'hagi seleccionat
 func chooseAndLoadLocal(localNode):
+	print(counter)
 	if counter <= 18 and !localNode.isNegoci and !localNode.isParc:
 		var file_path = "res://assets/LocalsTxts/" + str(counter) + ".json"
 		var json_as_text = FileAccess.get_file_as_string(file_path)
