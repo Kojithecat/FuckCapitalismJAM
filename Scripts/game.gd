@@ -66,8 +66,8 @@ func handle_new_building_selected(chooseNewBuildingNode):
 
 #En ordre, carrega el json corresponent al local que s'hagi seleccionat
 func chooseAndLoadLocal(localNode):
-	if counter <= 24:
-		var file_path = "res://assets/Locals/" + str(counter) + ".json"
+	if counter <= 18 and !localNode.isNegoci:
+		var file_path = "res://assets/LocalsTxts/" + str(counter) + ".json"
 		var json_as_text = FileAccess.get_file_as_string(file_path)
 		var json_as_dict = JSON.parse_string(json_as_text)
 		localNode.load_init_data(json_as_dict["name"], json_as_dict["desc"], json_as_dict["preu"])

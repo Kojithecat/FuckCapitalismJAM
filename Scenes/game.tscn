@@ -1,19 +1,31 @@
-[gd_scene load_steps=16 format=3 uid="uid://bjaaer4g8a6gw"]
+[gd_scene load_steps=28 format=3 uid="uid://bjaaer4g8a6gw"]
 
 [ext_resource type="Script" uid="uid://c1iuwc684ogay" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://d8bkxw8op8sv" path="res://Scripts/money.gd" id="2_3dryh"]
+[ext_resource type="Texture2D" path="res://assets/ILLES_OK/Locals/localBottom_icons_ferreteria_brown.png" id="3_81klo"]
 [ext_resource type="Script" uid="uid://dseuup1saf4vf" path="res://Scripts/percentatge.gd" id="3_wowpa"]
 [ext_resource type="Script" uid="uid://bjipqqg55duhh" path="res://Scripts/date.gd" id="4_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://b2tjfucfif7jn" path="res://Scenes/illa.tscn" id="4_o5yvi"]
 [ext_resource type="Script" uid="uid://bsdluwqv18ylg" path="res://Scripts/preu_pis_mes.gd" id="4_rfjv2"]
+[ext_resource type="Texture2D" path="res://assets/ILLES_OK/Locals/localBottom_icons_ferreteria_white.png" id="4_tgy6u"]
+[ext_resource type="Texture2D" path="res://assets/ILLES_OK/Locals/localBottom_icons_forn_brown.png" id="5_cwurv"]
 [ext_resource type="Texture2D" uid="uid://dicdd0ycwp1db" path="res://assets/SaFa.jpg" id="5_wowpa"]
+[ext_resource type="Texture2D" path="res://assets/ILLES_OK/Locals/localBottom_icons_forn_white.png" id="6_mucmn"]
 [ext_resource type="Script" uid="uid://dgf2ta6uyh6ak" path="res://sub_viewport.gd" id="7_1l0tm"]
+[ext_resource type="Texture2D" path="res://assets/ILLES_OK/Locals/localBottom_icons_llibreria_brown.png" id="7_8m3t6"]
+[ext_resource type="Texture2D" path="res://assets/ILLES_OK/Locals/localBottom_icons_llibreria_white.png" id="8_ese38"]
 [ext_resource type="PackedScene" uid="uid://dek0xvfrrdxtb" path="res://Scenes/BusinessMan.tscn" id="8_v158k"]
 [ext_resource type="PackedScene" uid="uid://scr3pbddnx5j" path="res://Scenes/desnonar_screen_demo1.tscn" id="9_h4fw4"]
+[ext_resource type="Texture2D" path="res://assets/ILLES_OK/Locals/localBottom_icons_restaurant_brown.png" id="9_oeip8"]
 [ext_resource type="Script" uid="uid://bjjhmeabc0c3o" path="res://Scripts/panel_container.gd" id="10_1phco"]
+[ext_resource type="Texture2D" path="res://assets/ILLES_OK/Locals/localBottom_icons_restaurant_white.png" id="10_xe308"]
+[ext_resource type="Texture2D" path="res://assets/ILLES_OK/Locals/localBottom_icons_xarcuteria_brown.png" id="11_d3cha"]
 [ext_resource type="AudioStream" uid="uid://ccjet2vr1j8fi" path="res://assets/sound/passive-income.mp3" id="11_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://cwy3vmav7ccnd" path="res://Scenes/choose_new_building_screen.tscn" id="11_rku1e"]
+[ext_resource type="Texture2D" path="res://assets/ILLES_OK/Locals/localBottom_icons_xarcuteria_white.png" id="12_i26dy"]
 [ext_resource type="AudioStream" uid="uid://cronjcmymo53b" path="res://assets/sound/cashier-sound.mp3" id="12_rku1e"]
+[ext_resource type="Texture2D" path="res://assets/ILLES_OK/Locals/localBottom_icons_fruiteria_brown.png" id="13_lmoi6"]
+[ext_resource type="Texture2D" path="res://assets/ILLES_OK/Locals/localBottom_icons_fruiteria_white.png" id="14_6uxt2"]
 [ext_resource type="PackedScene" uid="uid://ctkpxcgmpdrc5" path="res://Scenes/end_game_screen.tscn" id="15_nb51f"]
 
 [node name="Game" type="Node2D"]
@@ -21,17 +33,50 @@ script = ExtResource("1_wrm1d")
 
 [node name="Map" type="Node2D" parent="."]
 
+[node name="ColorRect" type="ColorRect" parent="Map"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(32.08, 18.2)
+color = Color(0.607843, 0.678431, 0.717647, 1)
+
 [node name="Illa1" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(519, 178)
 
 [node name="Control" parent="Map/Illa1" index="0"]
 metadata/_edit_use_anchors_ = true
 
+[node name="LocalBottom" parent="Map/Illa1" index="5"]
+isNegoci = true
+negociId = 1
+
+[node name="TextureButton" parent="Map/Illa1/LocalBottom" index="2"]
+texture_normal = ExtResource("3_81klo")
+texture_pressed = ExtResource("4_tgy6u")
+texture_hover = ExtResource("4_tgy6u")
+
 [node name="Illa2" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(711, 178)
 
+[node name="LocalBottom" parent="Map/Illa2" index="5"]
+isNegoci = true
+negociId = 2
+
+[node name="TextureButton" parent="Map/Illa2/LocalBottom" index="2"]
+texture_normal = ExtResource("5_cwurv")
+texture_pressed = ExtResource("6_mucmn")
+texture_hover = ExtResource("6_mucmn")
+
 [node name="Illa3" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(903, 178)
+
+[node name="LocalBottom" parent="Map/Illa3" index="5"]
+isNegoci = true
+negociId = 3
+
+[node name="TextureButton" parent="Map/Illa3/LocalBottom" index="2"]
+texture_normal = ExtResource("7_8m3t6")
+texture_pressed = ExtResource("8_ese38")
+texture_hover = ExtResource("8_ese38")
 
 [node name="Illa4" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(519, 370)
@@ -42,11 +87,38 @@ position = Vector2(903, 370)
 [node name="Illa6" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(519, 562)
 
+[node name="LocalBottom" parent="Map/Illa6" index="5"]
+isNegoci = true
+negociId = 4
+
+[node name="TextureButton" parent="Map/Illa6/LocalBottom" index="2"]
+texture_normal = ExtResource("9_oeip8")
+texture_pressed = ExtResource("10_xe308")
+texture_hover = ExtResource("10_xe308")
+
 [node name="Illa7" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(711, 562)
 
+[node name="LocalBottom" parent="Map/Illa7" index="5"]
+isNegoci = true
+negociId = 5
+
+[node name="TextureButton" parent="Map/Illa7/LocalBottom" index="2"]
+texture_normal = ExtResource("11_d3cha")
+texture_pressed = ExtResource("12_i26dy")
+texture_hover = ExtResource("12_i26dy")
+
 [node name="Illa8" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(903, 562)
+
+[node name="LocalBottom" parent="Map/Illa8" index="5"]
+isNegoci = true
+negociId = 6
+
+[node name="TextureButton" parent="Map/Illa8/LocalBottom" index="2"]
+texture_normal = ExtResource("13_lmoi6")
+texture_pressed = ExtResource("14_6uxt2")
+texture_hover = ExtResource("14_6uxt2")
 
 [node name="SagradaFamilia" type="Node2D" parent="Map"]
 position = Vector2(0, -8)
@@ -165,6 +237,17 @@ script = ExtResource("4_ldgsr")
 [connection signal="pressed" from="Map/SagradaFamilia/Button" to="." method="on_sagrada_familia_selected"]
 
 [editable path="Map/Illa1"]
+[editable path="Map/Illa1/LocalBottom"]
+[editable path="Map/Illa2"]
+[editable path="Map/Illa2/LocalBottom"]
+[editable path="Map/Illa3"]
+[editable path="Map/Illa3/LocalBottom"]
+[editable path="Map/Illa6"]
+[editable path="Map/Illa6/LocalBottom"]
+[editable path="Map/Illa7"]
+[editable path="Map/Illa7/LocalBottom"]
+[editable path="Map/Illa8"]
+[editable path="Map/Illa8/LocalBottom"]
 [editable path="CanvasGroup/ChooseNewBuildingScreen"]
 [editable path="CanvasGroup/ChooseNewBuildingScreen/NewBuildingOption"]
 [editable path="CanvasGroup/ChooseNewBuildingScreen/NewBuildingOption2"]

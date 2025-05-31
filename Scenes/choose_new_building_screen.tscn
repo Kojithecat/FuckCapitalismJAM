@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwy3vmav7ccnd"]
+[gd_scene load_steps=17 format=3 uid="uid://cwy3vmav7ccnd"]
 
 [ext_resource type="Texture2D" uid="uid://cvjyluc0n02bx" path="res://assets/Placeholders/ScreenChoseNewBuilding_placeholder.png" id="1_7yocn"]
 [ext_resource type="Script" uid="uid://cpsqvxv5ms8o2" path="res://Scripts/chooseBuildingController.gd" id="1_51tce"]
@@ -13,31 +13,49 @@
 [ext_resource type="Texture2D" uid="uid://c8tp72de15rf1" path="res://assets/IconesLocals/brunch.jpg" id="10_7a1hi"]
 [ext_resource type="Texture2D" uid="uid://cbala5o2phy35" path="res://assets/IconesLocals/bet.png" id="11_kprxy"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dchqv"]
+bg_color = Color(0.341176, 1, 0.341176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fg7y"]
+bg_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yeuof"]
+bg_color = Color(1, 0.34, 0.34, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olduo"]
+bg_color = Color(1, 0, 0, 1)
+
 [node name="ChooseNewBuildingScreen" type="Node2D"]
-scale = Vector2(1.5, 1.5)
 script = ExtResource("1_51tce")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -192.0
+offset_top = -240.0
+offset_right = 208.0
+offset_bottom = 260.0
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_7yocn")
 
 [node name="ButtonConfirm" type="Button" parent="."]
-offset_left = 75.0958
-offset_top = 140.996
-offset_right = 146.096
-offset_bottom = 171.996
-scale = Vector2(0.625, 0.625)
+offset_left = 96.0
+offset_top = 184.0
+offset_right = 167.0
+offset_bottom = 215.0
+theme_override_styles/disabled = SubResource("StyleBoxFlat_dchqv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2fg7y")
 disabled = true
 text = "Confirm"
-flat = true
 
 [node name="ButtonCancel" type="Button" parent="."]
-offset_left = 14.5594
-offset_top = 140.996
-offset_right = 85.5594
-offset_bottom = 171.996
-scale = Vector2(0.625, 0.625)
+offset_left = 16.0
+offset_top = 184.0
+offset_right = 87.0
+offset_bottom = 215.0
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yeuof")
+theme_override_styles/normal = SubResource("StyleBoxFlat_olduo")
 text = "Cancel"
-flat = true
 
 [node name="NewBuildingOption" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-120, -136)

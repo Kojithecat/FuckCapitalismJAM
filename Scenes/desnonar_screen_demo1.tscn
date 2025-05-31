@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://scr3pbddnx5j"]
+[gd_scene load_steps=11 format=3 uid="uid://scr3pbddnx5j"]
 
 [ext_resource type="Texture2D" uid="uid://djl2t760od1eo" path="res://assets/Avies/1.png" id="1_kiov4"]
 [ext_resource type="Script" uid="uid://bqg0iwl1n46dl" path="res://Scripts/desnonar_screen_demo_1.gd" id="1_qpds1"]
@@ -9,10 +9,29 @@
 [sub_resource type="LabelSettings" id="LabelSettings_qpds1"]
 font_color = Color(0.906005, 0, 0.197627, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hkab"]
+bg_color = Color(0.34, 1, 0.34, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ki0e"]
+bg_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhyju"]
+bg_color = Color(1, 0.3, 0.3, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kyhhh"]
+bg_color = Color(1, 0, 0, 1)
+
 [node name="desnonar1" type="Node2D"]
 script = ExtResource("1_qpds1")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -192.0
+offset_top = -240.0
+offset_right = 208.0
+offset_bottom = 260.0
+
 [node name="Fons Placeholder" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(1.31, 1.31)
 texture = ExtResource("2_qpds1")
 
@@ -31,27 +50,27 @@ label_settings = ExtResource("4_qpds1")
 metadata/_edit_use_anchors_ = true
 
 [node name="Desc" type="Label" parent="."]
-offset_left = -162.0
-offset_top = -56.0
-offset_right = 170.0
-offset_bottom = 78.0
+offset_left = -160.0
+offset_top = -80.0
+offset_right = 172.0
+offset_bottom = 54.0
 label_settings = ExtResource("4_qpds1")
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Preu" type="Label" parent="."]
 offset_left = 120.0
-offset_top = -88.0
-offset_right = 160.0
-offset_bottom = -65.0
+offset_top = -120.0
+offset_right = 166.0
+offset_bottom = -97.0
 theme_override_colors/font_color = Color(0.901961, 0, 0.2, 1)
 text = "10000"
 
 [node name="Warning" type="Label" parent="."]
-offset_left = -162.0
-offset_top = 100.0
-offset_right = 170.0
-offset_bottom = 234.0
+offset_left = -160.0
+offset_top = 64.0
+offset_right = 172.0
+offset_bottom = 198.0
 text = "Are you sure you want to take this property and thus, make the life of this whole family miserable?"
 label_settings = SubResource("LabelSettings_qpds1")
 autowrap_mode = 3
@@ -63,8 +82,9 @@ offset_top = 184.0
 offset_right = 167.0
 offset_bottom = 215.0
 scale = Vector2(0.84, 0.84)
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_2hkab")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ki0e")
 text = "Confirm"
-flat = true
 
 [node name="ButtonCancel" type="Button" parent="."]
 offset_left = 16.0
@@ -72,8 +92,9 @@ offset_top = 184.0
 offset_right = 87.0
 offset_bottom = 215.0
 scale = Vector2(0.84, 0.84)
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qhyju")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kyhhh")
 text = "Cancel"
-flat = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(96, 184)

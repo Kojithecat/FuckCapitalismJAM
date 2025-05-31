@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2tjfucfif7jn"]
+[gd_scene load_steps=7 format=3 uid="uid://b2tjfucfif7jn"]
 
-[ext_resource type="Texture2D" uid="uid://dg5konf1tk1s8" path="res://assets/IllaPlaceholder.png" id="1_1wfmf"]
 [ext_resource type="Script" uid="uid://bvgv3buvn3n82" path="res://Scripts/illaController.gd" id="1_v4eni"]
-[ext_resource type="PackedScene" uid="uid://dwgxab4cvccvt" path="res://Scenes/local.tscn" id="2_1wfmf"]
+[ext_resource type="PackedScene" uid="uid://dwgxab4cvccvt" path="res://Scenes/local_right.tscn" id="2_1wfmf"]
+[ext_resource type="Texture2D" uid="uid://nai4h7r0vdwh" path="res://assets/ILLES_OK/Illes/illa_base_brown.png" id="2_oogxs"]
+[ext_resource type="PackedScene" uid="uid://gqyforw23xpa" path="res://Scenes/local_left.tscn" id="4_4o0fw"]
+[ext_resource type="PackedScene" uid="uid://djva4ud276671" path="res://Scenes/local_top.tscn" id="5_jplun"]
+[ext_resource type="PackedScene" uid="uid://cp6lin0qpr7td" path="res://Scenes/local_bottom.tscn" id="6_oogxs"]
 
 [node name="Illa" type="Node2D"]
 script = ExtResource("1_v4eni")
@@ -15,18 +18,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_1wfmf")
+texture = ExtResource("2_oogxs")
 
-[node name="Local0" parent="." instance=ExtResource("2_1wfmf")]
-position = Vector2(32, -32)
+[node name="LocalRight" parent="." instance=ExtResource("2_1wfmf")]
+position = Vector2(23.03, -72)
 
-[node name="Local1" parent="." instance=ExtResource("2_1wfmf")]
-position = Vector2(-64, -32)
+[node name="LocalLeft" parent="." instance=ExtResource("4_4o0fw")]
+position = Vector2(-48.045, -72)
 
-[node name="Local2" parent="." instance=ExtResource("2_1wfmf")]
-position = Vector2(32, 32)
-rotation = 1.5708
+[node name="LocalTop" parent="." instance=ExtResource("5_jplun")]
+position = Vector2(-30.73, -71.95)
 
-[node name="Local3" parent="." instance=ExtResource("2_1wfmf")]
-position = Vector2(32, -64)
-rotation = 1.5708
+[node name="LocalBottom" parent="." instance=ExtResource("6_oogxs")]
+position = Vector2(-31.85, -1.735)
