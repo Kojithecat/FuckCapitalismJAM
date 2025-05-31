@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cot4dwwwbxe02"]
+[gd_scene load_steps=14 format=3 uid="uid://cot4dwwwbxe02"]
 
 [ext_resource type="Script" uid="uid://cpsqvxv5ms8o2" path="res://Scripts/chooseBuildingController.gd" id="1_qx1vr"]
 [ext_resource type="Texture2D" uid="uid://du0od6613td1g" path="res://assets/Parcs/banc.png" id="2_n1spn"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://3h0t6j8vpafq" path="res://Scenes/new_building_option.tscn" id="3_l0gey"]
 [ext_resource type="Texture2D" uid="uid://cw6hf5hlh7ruj" path="res://assets/IconesLocals/Gambling-512.webp" id="5_n388b"]
 [ext_resource type="Texture2D" uid="uid://dbobs75uc80s4" path="res://assets/IconesLocals/bank.png" id="6_n1spn"]
+[ext_resource type="FontFile" uid="uid://6x2sdn7otsqu" path="res://assets/fonts/Electrolize/Electrolize-Regular.ttf" id="7_atgev"]
 [ext_resource type="Script" uid="uid://c857k1yy8gbbj" path="res://Scripts/labelChooseBuildings.gd" id="13_b3wl3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dchqv"]
@@ -41,6 +42,7 @@ offset_left = 108.0
 offset_top = 211.0
 offset_right = 179.0
 offset_bottom = 242.0
+theme_override_fonts/font = ExtResource("7_atgev")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_dchqv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fg7y")
 disabled = true
@@ -51,6 +53,7 @@ offset_left = 16.0
 offset_top = 212.0
 offset_right = 87.0
 offset_bottom = 243.0
+theme_override_fonts/font = ExtResource("7_atgev")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_yeuof")
 theme_override_styles/normal = SubResource("StyleBoxFlat_olduo")
 text = "Cancel"
@@ -66,6 +69,15 @@ price = 15000000
 icon = ExtResource("6_n1spn")
 flat = false
 
+[node name="Nom" parent="BankOption" index="1"]
+theme_override_fonts/font = ExtResource("7_atgev")
+
+[node name="Price" parent="BankOption" index="2"]
+theme_override_fonts/font = ExtResource("7_atgev")
+
+[node name="Revenue" parent="BankOption" index="3"]
+theme_override_fonts/font = ExtResource("7_atgev")
+
 [node name="CasinoOption" parent="." instance=ExtResource("3_l0gey")]
 position = Vector2(40, -80)
 scale = Vector2(0.75, 0.75)
@@ -76,11 +88,24 @@ price = 10000000
 [node name="Option1" parent="CasinoOption/PanelContainer" index="0"]
 icon = ExtResource("5_n388b")
 
+[node name="Nom" parent="CasinoOption" index="1"]
+theme_override_fonts/font = ExtResource("7_atgev")
+
+[node name="Price" parent="CasinoOption" index="2"]
+theme_override_fonts/font = ExtResource("7_atgev")
+
+[node name="Revenue" parent="CasinoOption" index="3"]
+theme_override_fonts/font = ExtResource("7_atgev")
+
 [node name="Label" type="Label" parent="."]
 offset_left = -152.0
-offset_top = -240.0
+offset_top = -224.0
 offset_right = 168.0
-offset_bottom = -217.0
+offset_bottom = -201.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_atgev")
+theme_override_font_sizes/font_size = 18
+text = "What do you want to build?"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("13_b3wl3")

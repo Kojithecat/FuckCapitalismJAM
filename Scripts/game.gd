@@ -96,7 +96,7 @@ func onCancel():
 #Funció recursiva per a descativar/activar els butons de l'escena principal
 func set_locals_enabled(node, enabled):
 	for child in node.get_children():
-		if child is TextureButton:
+		if child is Button:
 			child.disabled = !enabled
 		set_locals_enabled(child, enabled) # Recursive call
 

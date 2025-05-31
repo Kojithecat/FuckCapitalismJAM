@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bjaaer4g8a6gw"]
+[gd_scene load_steps=27 format=3 uid="uid://bjaaer4g8a6gw"]
 
 [ext_resource type="Script" uid="uid://c1iuwc684ogay" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://d8bkxw8op8sv" path="res://Scripts/money.gd" id="2_3dryh"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://ctkpxcgmpdrc5" path="res://Scenes/end_game_screen.tscn" id="15_nb51f"]
 [ext_resource type="Script" uid="uid://bjitediap0qv7" path="res://Scripts/not_enough_money.gd" id="16_nnt18"]
 [ext_resource type="PackedScene" uid="uid://bav8optq5ci0q" path="res://Scenes/startScreen.tscn" id="17_22asu"]
+[ext_resource type="FontFile" uid="uid://6x2sdn7otsqu" path="res://assets/fonts/Electrolize/Electrolize-Regular.ttf" id="21_fkdbe"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_wrm1d")
@@ -231,8 +232,7 @@ visible = false
 visible = false
 position = Vector2(1, -2)
 
-[node name="Control" parent="CanvasGroup" instance=ExtResource("17_22asu")]
-visible = false
+[node name="StartGameScreen" parent="CanvasGroup" instance=ExtResource("17_22asu")]
 offset_left = -199.0
 offset_top = -162.0
 offset_right = -199.0
@@ -261,6 +261,7 @@ layout_mode = 2
 
 [node name="Money" type="Label" parent="WealthContainer/MarginContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("21_fkdbe")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_3dryh")
@@ -277,6 +278,7 @@ layout_mode = 2
 
 [node name="Percentage" type="Label" parent="TouristificationContainer/MarginContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("21_fkdbe")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_wowpa")
@@ -293,6 +295,7 @@ layout_mode = 2
 
 [node name="PreuPisMes" type="Label" parent="RentContainer/MarginContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("21_fkdbe")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_rfjv2")
@@ -309,6 +312,7 @@ layout_mode = 2
 
 [node name="Date" type="Label" parent="TimerContainer/MarginContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("21_fkdbe")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_ldgsr")
@@ -326,6 +330,7 @@ layout_mode = 2
 
 [node name="WarningMessage" type="Label" parent="ErrorContainer/MarginContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("21_fkdbe")
 text = "You don't have enough cash!"
 horizontal_alignment = 1
 vertical_alignment = 1

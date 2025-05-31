@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctkpxcgmpdrc5"]
+[gd_scene load_steps=5 format=3 uid="uid://ctkpxcgmpdrc5"]
 
 [ext_resource type="Script" uid="uid://c3jao7f2rnhyo" path="res://Scripts/end_game_screen.gd" id="1_64ufq"]
+[ext_resource type="FontFile" uid="uid://6x2sdn7otsqu" path="res://assets/fonts/Electrolize/Electrolize-Regular.ttf" id="2_4xkc4"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_dpv7f"]
 
@@ -25,6 +26,7 @@ offset_top = -64.0
 offset_right = 192.0
 offset_bottom = 128.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_4xkc4")
 text = "You have reached the end! 
 There are no more buildings to buy, families to kick out, monuments to tear down.
 You can now abandon this tourist theme park to fend by itself, or stay and watch your beloved numbers rise and rise and... well rise. Forever. Congratulations."
@@ -34,6 +36,7 @@ offset_left = -104.0
 offset_top = 184.0
 offset_right = 96.0
 offset_bottom = 224.0
+theme_override_fonts/font = ExtResource("2_4xkc4")
 theme_override_styles/normal = SubResource("StyleBoxFlat_64ufq")
 text = "Tear. It. Down."
 

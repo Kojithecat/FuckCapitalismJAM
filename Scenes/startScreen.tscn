@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bav8optq5ci0q"]
+[gd_scene load_steps=4 format=3 uid="uid://bav8optq5ci0q"]
 
 [ext_resource type="Script" uid="uid://du2cf4uepa6bu" path="res://Scenes/start_screen.gd" id="1_c1in8"]
+[ext_resource type="FontFile" uid="uid://6x2sdn7otsqu" path="res://assets/fonts/Electrolize/Electrolize-Regular.ttf" id="2_nwqh5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8om7"]
 bg_color = Color(0, 1, 0, 1)
@@ -22,12 +23,13 @@ offset_bottom = 300.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 23.0
-offset_right = 390.0
-offset_bottom = 223.0
+offset_left = -8.0
+offset_top = 40.0
+offset_right = 412.0
+offset_bottom = 240.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 12
+theme_override_fonts/normal_font = ExtResource("2_nwqh5")
+theme_override_font_sizes/normal_font_size = 14
 text = "Hey there champ! The day is finally here. Daddy sent you some of that sweet sweet pocket money so you can finally start making something of yourself.
 
 And look at this! A perfectly normal, boring neighbourhood in Barcelona (around the Sagrada Familia, no less!) just waiting to be turned into the tourist trap money maker we all know it could (and should) be.
@@ -35,11 +37,13 @@ And look at this! A perfectly normal, boring neighbourhood in Barcelona (around 
 All it needs is a hard worker with a vision and some extra cash lying around. You got this boss!"
 
 [node name="ButtonConfirm" type="Button" parent="."]
+layout_mode = 0
 offset_left = 144.0
-offset_top = 232.0
+offset_top = 240.0
 offset_right = 245.0
-offset_bottom = 263.0
+offset_bottom = 271.0
 theme_override_colors/font_color = Color(0.08, 0.08, 0.08, 1)
+theme_override_fonts/font = ExtResource("2_nwqh5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_o8om7")
 text = "Let's do this"
 
