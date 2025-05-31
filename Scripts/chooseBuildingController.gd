@@ -6,7 +6,7 @@ extends Node2D
 @export var newPrice: int
 @export var newIcon: CompressedTexture2D
 @export var newSprite: CompressedTexture2D
-@export var spriteParking: CompressedTexture2D
+@export var spriteBank: CompressedTexture2D
 @export var spriteCasino: CompressedTexture2D
 
 func _ready() -> void:
@@ -19,8 +19,8 @@ func handle_building_option_selected(newBuildingOptionNode):
 	newPrice = newBuildingOptionNode.price
 	newIcon = newBuildingOptionNode.icon
 	
-	if(newName=="Parking Lot"):
-		newSprite = spriteParking
+	if(newName=="Bank"):
+		newSprite = spriteBank
 	elif(newName=="Casino"):
 		newSprite = spriteCasino
 	

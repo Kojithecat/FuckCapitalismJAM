@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://cot4dwwwbxe02"]
 
 [ext_resource type="Script" uid="uid://cpsqvxv5ms8o2" path="res://Scripts/chooseBuildingController.gd" id="1_qx1vr"]
-[ext_resource type="Texture2D" uid="uid://bemq5xt0drgfj" path="res://assets/Parcs/parking.png" id="2_n1spn"]
+[ext_resource type="Texture2D" uid="uid://du0od6613td1g" path="res://assets/Parcs/banc.png" id="2_n1spn"]
 [ext_resource type="Texture2D" uid="uid://cvjyluc0n02bx" path="res://assets/Placeholders/ScreenChoseNewBuilding_placeholder.png" id="2_sx3h5"]
 [ext_resource type="Texture2D" uid="uid://bjtu6hkvk4y60" path="res://assets/Parcs/casino.png" id="3_atgev"]
 [ext_resource type="PackedScene" uid="uid://3h0t6j8vpafq" path="res://Scenes/new_building_option.tscn" id="3_l0gey"]
-[ext_resource type="Texture2D" uid="uid://bwipp8vtoqvdx" path="res://assets/IconesLocals/Parking_icon.svg.png" id="4_nhtf4"]
 [ext_resource type="Texture2D" uid="uid://cw6hf5hlh7ruj" path="res://assets/IconesLocals/Gambling-512.webp" id="5_n388b"]
+[ext_resource type="Texture2D" uid="uid://dbobs75uc80s4" path="res://assets/IconesLocals/bank.png" id="6_n1spn"]
 [ext_resource type="Script" uid="uid://c857k1yy8gbbj" path="res://Scripts/labelChooseBuildings.gd" id="13_b3wl3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dchqv"]
@@ -23,7 +23,7 @@ bg_color = Color(1, 0, 0, 1)
 
 [node name="ChooseNewBuildingScreen" type="Node2D"]
 script = ExtResource("1_qx1vr")
-spriteParking = ExtResource("2_n1spn")
+spriteBank = ExtResource("2_n1spn")
 spriteCasino = ExtResource("3_atgev")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -55,15 +55,15 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_yeuof")
 theme_override_styles/normal = SubResource("StyleBoxFlat_olduo")
 text = "Cancel"
 
-[node name="ParkingOption" parent="." instance=ExtResource("3_l0gey")]
+[node name="BankOption" parent="." instance=ExtResource("3_l0gey")]
 position = Vector2(-136, -80)
 scale = Vector2(0.75, 0.75)
-nomNewBuilding = "Parking Lot"
+nomNewBuilding = "Bank"
 revenue = 2000000
-price = 10000000
+price = 15000000
 
-[node name="Option1" parent="ParkingOption/PanelContainer" index="0"]
-icon = ExtResource("4_nhtf4")
+[node name="Option1" parent="BankOption/PanelContainer" index="0"]
+icon = ExtResource("6_n1spn")
 flat = false
 
 [node name="CasinoOption" parent="." instance=ExtResource("3_l0gey")]
@@ -71,7 +71,7 @@ position = Vector2(40, -80)
 scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Casino"
 revenue = 5000000
-price = 15000000
+price = 10000000
 
 [node name="Option1" parent="CasinoOption/PanelContainer" index="0"]
 icon = ExtResource("5_n388b")
@@ -88,5 +88,5 @@ script = ExtResource("13_b3wl3")
 [connection signal="pressed" from="ButtonConfirm" to="." method="onConfirm"]
 [connection signal="pressed" from="ButtonCancel" to="." method="onCancel"]
 
-[editable path="ParkingOption"]
+[editable path="BankOption"]
 [editable path="CasinoOption"]
