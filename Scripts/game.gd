@@ -9,7 +9,7 @@ extends Node2D
 var localSelected = null
 var option = 0
 var counter = 1
-var totalLocalNum = 2
+var totalLocalNum = 26
 var monthlyIncome = 0
 var endGameUnlocked = false
 
@@ -96,7 +96,7 @@ func onCancel():
 #Funció recursiva per a descativar/activar els butons de l'escena principal
 func set_locals_enabled(node, enabled):
 	for child in node.get_children():
-		if child is Button:
+		if child is TextureButton:
 			child.disabled = !enabled
 		set_locals_enabled(child, enabled) # Recursive call
 

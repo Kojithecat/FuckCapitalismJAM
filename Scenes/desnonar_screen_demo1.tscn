@@ -30,12 +30,22 @@ offset_top = -240.0
 offset_right = 208.0
 offset_bottom = 260.0
 
+[node name="Preu2" type="Label" parent="."]
+offset_left = -168.0
+offset_top = -208.0
+offset_right = 221.0
+offset_bottom = -180.0
+theme_override_colors/font_color = Color(0.901961, 0, 0.2, 1)
+theme_override_font_sizes/font_size = 18
+text = "Are you sure you want to kick them out?"
+
 [node name="Fons Placeholder" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(1.31, 1.31)
 texture = ExtResource("2_qpds1")
 
 [node name="Foto Placeholder" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 position = Vector2(-100, -150)
 scale = Vector2(0.25, 0.25)
