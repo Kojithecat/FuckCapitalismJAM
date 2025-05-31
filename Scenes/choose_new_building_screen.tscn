@@ -2,16 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://cvjyluc0n02bx" path="res://assets/Placeholders/ScreenChoseNewBuilding_placeholder.png" id="1_7yocn"]
 [ext_resource type="Script" uid="uid://cpsqvxv5ms8o2" path="res://Scripts/chooseBuildingController.gd" id="1_51tce"]
-[ext_resource type="Texture2D" uid="uid://c6eclvds1npe0" path="res://assets/IconesLocals/fastfood.png" id="4_dchqv"]
-[ext_resource type="Texture2D" uid="uid://chynl8fdug5hq" path="res://assets/IconesLocals/hotels.jpg" id="4_r4n0f"]
+[ext_resource type="Texture2D" uid="uid://ig1ulx5hun3p" path="res://assets/IconesLocals/fastfood_v2.png" id="4_2fg7y"]
 [ext_resource type="PackedScene" uid="uid://3h0t6j8vpafq" path="res://Scenes/new_building_option.tscn" id="4_xkjal"]
-[ext_resource type="Texture2D" uid="uid://cmhxuig4tmd0x" path="res://assets/IconesLocals/souvenir.png" id="5_2fg7y"]
-[ext_resource type="Texture2D" uid="uid://dlsex4ydnivk5" path="res://assets/IconesLocals/money_eXchange.png" id="5_ujco6"]
-[ext_resource type="Texture2D" uid="uid://bkjfcrvjsevwb" path="res://assets/IconesLocals/cafe.png" id="6_dchqv"]
-[ext_resource type="Texture2D" uid="uid://dyv7c5xrd27gm" path="res://assets/IconesLocals/smash.jpeg" id="8_yeuof"]
-[ext_resource type="Texture2D" uid="uid://nnxr67tmeiar" path="res://assets/IconesLocals/bnb.png" id="9_olduo"]
-[ext_resource type="Texture2D" uid="uid://c8tp72de15rf1" path="res://assets/IconesLocals/brunch.jpg" id="10_7a1hi"]
+[ext_resource type="Texture2D" uid="uid://bty1jwhpqcpxu" path="res://assets/IconesLocals/souvenir_v2.png" id="5_yeuof"]
+[ext_resource type="Texture2D" uid="uid://bxr5cl8s51jca" path="res://assets/IconesLocals/cafe_v3.png" id="6_olduo"]
+[ext_resource type="Texture2D" uid="uid://dd3bhno2t8m55" path="res://assets/IconesLocals/money_eXchange_v3.png" id="7_7a1hi"]
+[ext_resource type="Texture2D" uid="uid://c1trenneunaax" path="res://assets/IconesLocals/burger_v2.png" id="8_kprxy"]
+[ext_resource type="Texture2D" uid="uid://dsdv7fufuskap" path="res://assets/IconesLocals/b&b_v2.png" id="9_iyb1l"]
+[ext_resource type="Texture2D" uid="uid://erylri1n3s3p" path="res://assets/IconesLocals/brunch_v2.png" id="10_tftjh"]
 [ext_resource type="Texture2D" uid="uid://cbala5o2phy35" path="res://assets/IconesLocals/bet.png" id="11_kprxy"]
+[ext_resource type="Texture2D" uid="uid://c3ob1mgdbgfje" path="res://assets/IconesLocals/hotel_v2.png" id="12_l67o0"]
 [ext_resource type="Script" uid="uid://c857k1yy8gbbj" path="res://Scripts/labelChooseBuildings.gd" id="13_2fg7y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dchqv"]
@@ -58,95 +58,95 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_yeuof")
 theme_override_styles/normal = SubResource("StyleBoxFlat_olduo")
 text = "Cancel"
 
-[node name="NewBuildingOption" parent="." instance=ExtResource("4_xkjal")]
+[node name="Fastfood" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-153, -187)
 scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Fast Food"
 revenue = 10000
 price = 100000
 
-[node name="Option1" parent="NewBuildingOption/PanelContainer" index="0"]
-icon = ExtResource("4_dchqv")
+[node name="Option1" parent="Fastfood/PanelContainer" index="0"]
+icon = ExtResource("4_2fg7y")
 
-[node name="NewBuildingOption2" parent="." instance=ExtResource("4_xkjal")]
+[node name="Souvenir" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-43, -187)
 scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Souvenir Shop"
 revenue = 20000
 price = 200000
 
-[node name="Option1" parent="NewBuildingOption2/PanelContainer" index="0"]
-icon = ExtResource("5_2fg7y")
+[node name="Option1" parent="Souvenir/PanelContainer" index="0"]
+icon = ExtResource("5_yeuof")
 
-[node name="NewBuildingOption3" parent="." instance=ExtResource("4_xkjal")]
+[node name="Cafe" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(68, -187)
 scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Café especialidad"
 revenue = 33000
 price = 300000
 
-[node name="Option1" parent="NewBuildingOption3/PanelContainer" index="0"]
-icon = ExtResource("6_dchqv")
+[node name="Option1" parent="Cafe/PanelContainer" index="0"]
+icon = ExtResource("6_olduo")
 
-[node name="NewBuildingOption4" parent="." instance=ExtResource("4_xkjal")]
+[node name="MoneyExchange" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-153, -57)
 scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Money eXchange"
 revenue = 60000
 price = 500000
 
-[node name="Option1" parent="NewBuildingOption4/PanelContainer" index="0"]
-icon = ExtResource("5_ujco6")
+[node name="Option1" parent="MoneyExchange/PanelContainer" index="0"]
+icon = ExtResource("7_7a1hi")
 
-[node name="NewBuildingOption5" parent="." instance=ExtResource("4_xkjal")]
+[node name="Burger" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-43, -57)
 scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Smash burger"
 revenue = 85000
 price = 700000
 
-[node name="Option1" parent="NewBuildingOption5/PanelContainer" index="0"]
-icon = ExtResource("8_yeuof")
+[node name="Option1" parent="Burger/PanelContainer" index="0"]
+icon = ExtResource("8_kprxy")
 
-[node name="NewBuildingOption6" parent="." instance=ExtResource("4_xkjal")]
+[node name="b&b" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(68, -57)
 scale = Vector2(0.75, 0.75)
 nomNewBuilding = "b&b"
 revenue = 125000
 price = 1000000
 
-[node name="Option1" parent="NewBuildingOption6/PanelContainer" index="0"]
-icon = ExtResource("9_olduo")
+[node name="Option1" parent="b&b/PanelContainer" index="0"]
+icon = ExtResource("9_iyb1l")
 
-[node name="NewBuildingOption7" parent="." instance=ExtResource("4_xkjal")]
+[node name="Brunch" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-153, 73)
 scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Avocado brunch"
 revenue = 200000
 price = 1500000
 
-[node name="Option1" parent="NewBuildingOption7/PanelContainer" index="0"]
-icon = ExtResource("10_7a1hi")
+[node name="Option1" parent="Brunch/PanelContainer" index="0"]
+icon = ExtResource("10_tftjh")
 
-[node name="NewBuildingOption8" parent="." instance=ExtResource("4_xkjal")]
+[node name="Bet" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(-43, 73)
 scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Bet Bet Bet"
 revenue = 280000
 price = 2000000
 
-[node name="Option1" parent="NewBuildingOption8/PanelContainer" index="0"]
+[node name="Option1" parent="Bet/PanelContainer" index="0"]
 icon = ExtResource("11_kprxy")
 
-[node name="NewBuildingOption9" parent="." instance=ExtResource("4_xkjal")]
+[node name="Hotel" parent="." instance=ExtResource("4_xkjal")]
 position = Vector2(68, 73)
 scale = Vector2(0.75, 0.75)
 nomNewBuilding = "Hotel HolyFam"
 revenue = 440000
 price = 3000000
 
-[node name="Option1" parent="NewBuildingOption9/PanelContainer" index="0"]
-icon = ExtResource("4_r4n0f")
+[node name="Option1" parent="Hotel/PanelContainer" index="0"]
+icon = ExtResource("12_l67o0")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -152.0
@@ -160,12 +160,12 @@ script = ExtResource("13_2fg7y")
 [connection signal="pressed" from="ButtonConfirm" to="." method="onConfirm"]
 [connection signal="pressed" from="ButtonCancel" to="." method="onCancel"]
 
-[editable path="NewBuildingOption"]
-[editable path="NewBuildingOption2"]
-[editable path="NewBuildingOption3"]
-[editable path="NewBuildingOption4"]
-[editable path="NewBuildingOption5"]
-[editable path="NewBuildingOption6"]
-[editable path="NewBuildingOption7"]
-[editable path="NewBuildingOption8"]
-[editable path="NewBuildingOption9"]
+[editable path="Fastfood"]
+[editable path="Souvenir"]
+[editable path="Cafe"]
+[editable path="MoneyExchange"]
+[editable path="Burger"]
+[editable path="b&b"]
+[editable path="Brunch"]
+[editable path="Bet"]
+[editable path="Hotel"]

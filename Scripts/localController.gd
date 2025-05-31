@@ -38,7 +38,7 @@ func _ready():
 		var file_path = "res://assets/ParcsTxts/" + str(parcId) + ".json"
 		var json_as_text = FileAccess.get_file_as_string(file_path)
 		var json_as_dict = JSON.parse_string(json_as_text)
-		load_init_data(json_as_dict["name"], json_as_dict["desc"], json_as_dict["preu"])
+		load_init_data(json_as_dict["name"], json_as_dict["descENG"], json_as_dict["preu"])
 
 func load_init_data(nameInit: String, descriptionInit: String, preuInit: int):
 	nameOg = nameInit
