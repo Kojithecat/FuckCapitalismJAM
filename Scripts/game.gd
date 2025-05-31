@@ -72,6 +72,7 @@ func chooseAndLoadLocal(localNode):
 		var json_as_dict = JSON.parse_string(json_as_text)
 		localNode.load_init_data(json_as_dict["name"], json_as_dict["desc"], json_as_dict["preu"])
 	else:
+		#TODO gestionar missatge d'avís
 		print("S'han comprat tots els locals")
 
 #On cancel any of the form screens
