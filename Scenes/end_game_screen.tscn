@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctkpxcgmpdrc5"]
+[gd_scene load_steps=4 format=3 uid="uid://ctkpxcgmpdrc5"]
 
 [ext_resource type="Script" uid="uid://c3jao7f2rnhyo" path="res://Scripts/end_game_screen.gd" id="1_64ufq"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_dpv7f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64ufq"]
+bg_color = Color(0.86, 0.25327, 0.1462, 1)
 
 [node name="EndGameScreen" type="Node2D"]
 script = ExtResource("1_64ufq")
@@ -31,6 +34,7 @@ offset_left = -104.0
 offset_top = 184.0
 offset_right = 96.0
 offset_bottom = 224.0
-text = "Congratulations"
+theme_override_styles/normal = SubResource("StyleBoxFlat_64ufq")
+text = "Tear. It. Down."
 
 [connection signal="pressed" from="Button" to="." method="on_confirm"]

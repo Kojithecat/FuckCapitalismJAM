@@ -5,12 +5,12 @@ extends Node2D
 @export var newRevenue: int
 @export var newPrice: int
 @export var newIcon: CompressedTexture2D
+@export var newSprite: CompressedTexture2D
+@export var spriteParking: CompressedTexture2D
+@export var spriteCasino: CompressedTexture2D
 
 func _ready() -> void:
 	add_to_group("chooseNewBuildingGroup")
-	
-func init_parc_info(parcId: int):
-	print("should only show one option")
 
 func handle_building_option_selected(newBuildingOptionNode):
 	newName = newBuildingOptionNode.nomNewBuilding
@@ -18,6 +18,11 @@ func handle_building_option_selected(newBuildingOptionNode):
 	newRevenue = newBuildingOptionNode.revenue
 	newPrice = newBuildingOptionNode.price
 	newIcon = newBuildingOptionNode.icon
+	
+	if(newName=="Parking Lot"):
+		newSprite = spriteParking
+	elif(newName=="Casino"):
+		newSprite = spriteCasino
 	
 	$ButtonConfirm.disabled = false
 

@@ -3,12 +3,13 @@ extends Node2D
 @onready var viewport = $SubViewport
 @onready var sprite = $BusinessMan
 @onready var chooseBuilding = $CanvasGroup/ChooseNewBuildingScreen
+@onready var chooseBuildingParc = $CanvasGroup/ChooseNewBuildingParcScreen
 @onready var desnonar = $CanvasGroup/DesnonarScreen
 
 var localSelected = null
 var option = 0
 var counter = 1
-var totalLocalNum = 24
+var totalLocalNum = 2
 var monthlyIncome = 0
 var endGameUnlocked = false
 
@@ -45,14 +46,13 @@ func handle_desnonar_confirmed():
 	if(!localSelected.isParc):
 		chooseBuilding.visible = true;
 	else:
-		chooseBuilding.init_parc_info(localSelected.parcId)
-		chooseBuilding.visible = true;
+		chooseBuildingParc.visible = true;
 
 #Rep la info del nou negoci (choose_new_building_screen), crida al local perque actualitzi les seves noves dades i gestiona diners
 func handle_new_building_selected(chooseNewBuildingNode):
 	if(chooseNewBuildingNode.newPrice + 10000 <= $WealthContainer/MarginContainer/Money.counter):
 		localSelected.purchase_local(chooseNewBuildingNode.newName, chooseNewBuildingNode.newDesc, 
-			chooseNewBuildingNode.newRevenue, chooseNewBuildingNode.newIcon)
+			chooseNewBuildingNode.newRevenue, chooseNewBuildingNode.newIcon, chooseNewBuildingNode.newSprite)
 		monthlyIncome += chooseNewBuildingNode.newRevenue
 		$WealthContainer/MarginContainer/Money.decrement_money(chooseNewBuildingNode.newPrice)
 		# Cal ficar el preu local? Ja tenim el de desnonar i el del nou local $Money.decrement_money(localSelected.preu)
@@ -60,9 +60,13 @@ func handle_new_building_selected(chooseNewBuildingNode):
 		$ChaChing.play()
 		$WealthContainer/MarginContainer/Money.decrement_cost_desnonar()
 		set_locals_enabled($Map, true)
-		counter += 1
+		
+		print(counter)
+		print(totalLocalNum)
 		if(counter >= totalLocalNum): 
 			unlock_endgame()
+		
+		counter += 1
 	else:
 		#TODO Hem de fer handle per quan no tinguem prous diners (T'ho financia la familia, herencia, ajuda del banc, etc)
 		print("No tens prous diners")
@@ -71,7 +75,7 @@ func handle_new_building_selected(chooseNewBuildingNode):
 		await get_tree().create_timer(5.0).timeout
 		# Hide again
 		$ErrorContainer.visible = false
-		#Descontar el cost del local en funció del local
+		
 	set_locals_enabled($Map, true)
 
 #En ordre, carrega el json corresponent al local que s'hagi seleccionat
@@ -100,7 +104,17 @@ func set_locals_enabled(node, enabled):
 func unlock_endgame():
 	print("Endgame has been unlocked!")
 	endGameUnlocked = true
-	$Map/SagradaFamilia/Button.disabled = false
+	$Map/SagradaFamilia/TextureButton.disabled = false
+	
+	$ErrorContainer/MarginContainer/WarningMessage.text = "You can now buy the Sagrada Família!"
+	$ErrorContainer.visible = true
+	# Wait for 2 seconds
+	await get_tree().create_timer(5.0).timeout
+	# Hide again
+	$ErrorContainer.visible = false
+	
+	endGameUnlocked = true
+	$Map/SagradaFamilia/TextureButton.disabled = false
 
 #Rep l'avís del botó de la sagrada familia
 func on_sagrada_familia_selected():
@@ -109,4 +123,6 @@ func on_sagrada_familia_selected():
 #Rep l'avís de la pantalla end_game_scene i deshabilita la sagrada familia
 func on_confirm_sagrada_familia():
 	print("confirm safa")
-	$Map/SagradaFamilia/Button.disabled = true
+	$Map/SagradaFamilia/TextureButton.disabled = true
+	$Map/SagradaFamilia/TextureButton.visible = false
+	$Map/SagradaFamilia/ParkingFinal.visible = true

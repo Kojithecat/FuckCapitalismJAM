@@ -52,12 +52,14 @@ func on_local_pressed() -> void:
 		#TODO s'hauria de mostrar una altra pantalla amb la nova info, que sigui només de consulta
 		print("El local ja ha estat desnonat")	
 	
-func purchase_local(newName: String, newDesc: String, newRevenue: int, newIcon: CompressedTexture2D):
+func purchase_local(newName: String, newDesc: String, newRevenue: int, newIconNegoci: CompressedTexture2D, newSpriteParc: CompressedTexture2D):
 	nameNew = newName
 	descriptionNew = newDesc
 	revenue = newRevenue
 	purchased = true
 	$TextureButton.disabled = true
 	if(isNegoci):
-		$negociIcon.texture = newIcon
+		$negociIcon.texture = newIconNegoci
 		$negociIcon.visible = true
+	if(isParc):
+		$TextureButton.texture_disabled = newSpriteParc
