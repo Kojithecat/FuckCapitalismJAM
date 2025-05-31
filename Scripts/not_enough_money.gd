@@ -8,4 +8,4 @@ func _ready():
 	update_display()
 	
 func update_display():
-	text = "Not enough money to buy that place!"
+	text = "You don't have enough cash!"

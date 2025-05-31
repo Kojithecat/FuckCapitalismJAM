@@ -3,6 +3,9 @@ extends Node2D
 @export var isNegoci = false;
 @export var negociId: int
 
+@export var isParc = false
+@export var parcId: int
+
 @export var nameOg: String = "nom placeholder"
 @export var descriptionOg: String = "descripcio placeholder"
 @export var preu: int = 10
@@ -30,6 +33,12 @@ func _ready():
 		var json_as_text = FileAccess.get_file_as_string(file_path)
 		var json_as_dict = JSON.parse_string(json_as_text)
 		load_init_data(json_as_dict["name"], json_as_dict["desc"], json_as_dict["preu"])
+	
+	elif(isParc && parcId!=null):
+		var file_path = "res://assets/ParcsTxts/" + str(parcId) + ".json"
+		var json_as_text = FileAccess.get_file_as_string(file_path)
+		var json_as_dict = JSON.parse_string(json_as_text)
+		load_init_data(json_as_dict["name"], json_as_dict["desc"], json_as_dict["preu"])
 
 func load_init_data(nameInit: String, descriptionInit: String, preuInit: int):
 	nameOg = nameInit
@@ -43,10 +52,12 @@ func on_local_pressed() -> void:
 		#TODO s'hauria de mostrar una altra pantalla amb la nova info, que sigui només de consulta
 		print("El local ja ha estat desnonat")	
 	
-func purchase_local(newName: String, newDesc: String, newRevenue: int):
+func purchase_local(newName: String, newDesc: String, newRevenue: int, newIcon: CompressedTexture2D):
 	nameNew = newName
 	descriptionNew = newDesc
 	revenue = newRevenue
 	purchased = true
 	$TextureButton.disabled = true
-	$Control/PlaceholderFons.color = "FF00FF"
+	if(isNegoci):
+		$negociIcon.texture = newIcon
+		$negociIcon.visible = true

@@ -1,43 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://cp6lin0qpr7td"]
 
 [ext_resource type="Script" uid="uid://crikqwtnqypn1" path="res://Scripts/localController.gd" id="1_4w5qa"]
-[ext_resource type="Texture2D" uid="uid://dg5konf1tk1s8" path="res://assets/IllaPlaceholder.png" id="2_5gcn7"]
 [ext_resource type="Texture2D" uid="uid://yow3fbu1hmnk" path="res://assets/ILLES_OK/Locals/localBottom_base_brown.png" id="3_4w5qa"]
 [ext_resource type="Texture2D" uid="uid://b4q6q4pxgb468" path="res://assets/ILLES_OK/Locals/localBottom_base_white.png" id="4_5gcn7"]
 [ext_resource type="Texture2D" uid="uid://ba1cjq7hhl044" path="res://assets/ILLES_OK/Locals/localBottom_purchased.png" id="5_5gcn7"]
+[ext_resource type="Texture2D" uid="uid://cbala5o2phy35" path="res://assets/IconesLocals/bet.png" id="5_7g6on"]
 
 [node name="Local" type="Node2D"]
 script = ExtResource("1_4w5qa")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("2_5gcn7")
-
-[node name="Control" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 32.0
-offset_bottom = 63.925
-
-[node name="PlaceholderFons" type="ColorRect" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.478431, 0.721569, 0, 1)
-
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = 0.0750008
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
 
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_right = 40.0
@@ -47,5 +17,10 @@ texture_pressed = ExtResource("4_5gcn7")
 texture_hover = ExtResource("4_5gcn7")
 texture_disabled = ExtResource("5_5gcn7")
 
-[connection signal="pressed" from="Control/Button" to="." method="on_local_pressed"]
+[node name="negociIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(16, 40)
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("5_7g6on")
+
 [connection signal="pressed" from="TextureButton" to="." method="on_local_pressed"]

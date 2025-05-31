@@ -1,12 +1,18 @@
-[gd_scene load_steps=17 format=3 uid="uid://bjaaer4g8a6gw"]
+[gd_scene load_steps=23 format=3 uid="uid://bjaaer4g8a6gw"]
 
 [ext_resource type="Script" uid="uid://c1iuwc684ogay" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://d8bkxw8op8sv" path="res://Scripts/money.gd" id="2_3dryh"]
+[ext_resource type="Texture2D" uid="uid://c0najfibheeo0" path="res://assets/Parcs/park2.png" id="3_85qyi"]
+[ext_resource type="Texture2D" uid="uid://418xd1ovwj2g" path="res://assets/sagradafamilia_icon.png" id="3_nnt18"]
 [ext_resource type="Script" uid="uid://dseuup1saf4vf" path="res://Scripts/percentatge.gd" id="3_wowpa"]
+[ext_resource type="Texture2D" uid="uid://dsxqdoyow7g6k" path="res://assets/Parcs/park2_white.png" id="4_7nbq1"]
+[ext_resource type="Texture2D" uid="uid://b2g1cdglarh6f" path="res://assets/Parcs/park1.png" id="4_iivbl"]
 [ext_resource type="Script" uid="uid://bjipqqg55duhh" path="res://Scripts/date.gd" id="4_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://b2tjfucfif7jn" path="res://Scenes/illa.tscn" id="4_o5yvi"]
 [ext_resource type="Script" uid="uid://bsdluwqv18ylg" path="res://Scripts/preu_pis_mes.gd" id="4_rfjv2"]
-[ext_resource type="Texture2D" uid="uid://dicdd0ycwp1db" path="res://assets/SaFa.jpg" id="5_wowpa"]
+[ext_resource type="Texture2D" uid="uid://bemq5xt0drgfj" path="res://assets/Parcs/parking.png" id="5_7t8sx"]
+[ext_resource type="Texture2D" uid="uid://b5hg4egjqaf8q" path="res://assets/Parcs/park1_white.png" id="6_7t8sx"]
+[ext_resource type="Texture2D" uid="uid://bjtu6hkvk4y60" path="res://assets/Parcs/casino.png" id="6_exi56"]
 [ext_resource type="Script" uid="uid://dgf2ta6uyh6ak" path="res://sub_viewport.gd" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://dek0xvfrrdxtb" path="res://Scenes/BusinessMan.tscn" id="8_v158k"]
 [ext_resource type="PackedScene" uid="uid://scr3pbddnx5j" path="res://Scenes/desnonar_screen_demo1.tscn" id="9_h4fw4"]
@@ -26,7 +32,7 @@ script = ExtResource("1_wrm1d")
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(32.08, 18.2)
-color = Color(0.607843, 0.678431, 0.717647, 1)
+color = Color(0.544, 0.64, 0.5952, 1)
 
 [node name="Illa1" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(519, 178)
@@ -38,7 +44,7 @@ metadata/_edit_use_anchors_ = true
 isNegoci = true
 negociId = 1
 
-[node name="TextureButton" parent="Map/Illa1/LocalBottom" index="2"]
+[node name="TextureButton" parent="Map/Illa1/LocalBottom" index="0"]
 texture_normal = null
 texture_pressed = null
 texture_hover = null
@@ -50,7 +56,7 @@ position = Vector2(711, 178)
 isNegoci = true
 negociId = 2
 
-[node name="TextureButton" parent="Map/Illa2/LocalBottom" index="2"]
+[node name="TextureButton" parent="Map/Illa2/LocalBottom" index="0"]
 texture_normal = null
 texture_pressed = null
 texture_hover = null
@@ -62,16 +68,64 @@ position = Vector2(903, 178)
 isNegoci = true
 negociId = 3
 
-[node name="TextureButton" parent="Map/Illa3/LocalBottom" index="2"]
+[node name="TextureButton" parent="Map/Illa3/LocalBottom" index="0"]
 texture_normal = null
 texture_pressed = null
 texture_hover = null
 
-[node name="Illa4" parent="Map" instance=ExtResource("4_o5yvi")]
+[node name="ParcLeft" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(519, 370)
 
-[node name="Illa5" parent="Map" instance=ExtResource("4_o5yvi")]
+[node name="Sprite2D" parent="Map/ParcLeft" index="1"]
+visible = false
+texture = ExtResource("3_85qyi")
+
+[node name="LocalRight" parent="Map/ParcLeft" index="2"]
+visible = false
+
+[node name="LocalLeft" parent="Map/ParcLeft" index="3"]
+visible = false
+
+[node name="LocalTop" parent="Map/ParcLeft" index="4"]
+visible = false
+
+[node name="LocalBottom" parent="Map/ParcLeft" index="5"]
+position = Vector2(-47, -74)
+isParc = true
+parcId = 1
+
+[node name="TextureButton" parent="Map/ParcLeft/LocalBottom" index="0"]
+texture_normal = ExtResource("3_85qyi")
+texture_pressed = ExtResource("4_7nbq1")
+texture_hover = ExtResource("4_7nbq1")
+texture_disabled = ExtResource("5_7t8sx")
+
+[node name="ParcRight" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(903, 370)
+
+[node name="Sprite2D" parent="Map/ParcRight" index="1"]
+visible = false
+texture = ExtResource("4_iivbl")
+
+[node name="LocalRight" parent="Map/ParcRight" index="2"]
+visible = false
+
+[node name="LocalLeft" parent="Map/ParcRight" index="3"]
+visible = false
+
+[node name="LocalTop" parent="Map/ParcRight" index="4"]
+visible = false
+
+[node name="LocalBottom" parent="Map/ParcRight" index="5"]
+position = Vector2(-49, -73)
+isParc = true
+parcId = 2
+
+[node name="TextureButton" parent="Map/ParcRight/LocalBottom" index="0"]
+texture_normal = ExtResource("4_iivbl")
+texture_pressed = ExtResource("6_7t8sx")
+texture_hover = ExtResource("6_7t8sx")
+texture_disabled = ExtResource("6_exi56")
 
 [node name="Illa6" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(519, 562)
@@ -80,7 +134,7 @@ position = Vector2(519, 562)
 isNegoci = true
 negociId = 4
 
-[node name="TextureButton" parent="Map/Illa6/LocalBottom" index="2"]
+[node name="TextureButton" parent="Map/Illa6/LocalBottom" index="0"]
 texture_normal = null
 texture_pressed = null
 texture_hover = null
@@ -92,7 +146,7 @@ position = Vector2(711, 562)
 isNegoci = true
 negociId = 5
 
-[node name="TextureButton" parent="Map/Illa7/LocalBottom" index="2"]
+[node name="TextureButton" parent="Map/Illa7/LocalBottom" index="0"]
 texture_normal = null
 texture_pressed = null
 texture_hover = null
@@ -104,7 +158,7 @@ position = Vector2(903, 562)
 isNegoci = true
 negociId = 6
 
-[node name="TextureButton" parent="Map/Illa8/LocalBottom" index="2"]
+[node name="TextureButton" parent="Map/Illa8/LocalBottom" index="0"]
 texture_normal = null
 texture_pressed = null
 texture_hover = null
@@ -114,8 +168,8 @@ position = Vector2(0, -8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Map/SagradaFamilia"]
 position = Vector2(714, 378)
-scale = Vector2(0.251359, 0.232337)
-texture = ExtResource("5_wowpa")
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("3_nnt18")
 
 [node name="Button" type="Button" parent="Map/SagradaFamilia"]
 offset_left = 624.0
@@ -248,6 +302,10 @@ script = ExtResource("16_nnt18")
 [editable path="Map/Illa2/LocalBottom"]
 [editable path="Map/Illa3"]
 [editable path="Map/Illa3/LocalBottom"]
+[editable path="Map/ParcLeft"]
+[editable path="Map/ParcLeft/LocalBottom"]
+[editable path="Map/ParcRight"]
+[editable path="Map/ParcRight/LocalBottom"]
 [editable path="Map/Illa6"]
 [editable path="Map/Illa6/LocalBottom"]
 [editable path="Map/Illa7"]

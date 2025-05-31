@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctkpxcgmpdrc5"]
+[gd_scene load_steps=3 format=3 uid="uid://ctkpxcgmpdrc5"]
 
-[ext_resource type="Script" uid="uid://c3jao7f2rnhyo" path="res://Scenes/end_game_screen.gd" id="1_64ufq"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dpv7f"]
-size = Vector2(500, 580)
+[ext_resource type="Script" uid="uid://c3jao7f2rnhyo" path="res://Scripts/end_game_screen.gd" id="1_64ufq"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_dpv7f"]
 
 [node name="EndGameScreen" type="Node2D"]
 script = ExtResource("1_64ufq")
 
-[node name="Background" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_dpv7f")
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -248.0
+offset_top = -288.0
+offset_right = 252.0
+offset_bottom = 292.0
 
 [node name="Image" type="Sprite2D" parent="."]
 texture = SubResource("ImageTexture_dpv7f")
@@ -21,6 +21,7 @@ offset_left = -208.0
 offset_top = -64.0
 offset_right = 192.0
 offset_bottom = 128.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "You have reached the end! 
 There are no more buildings to buy, families to kick out, monuments to tear down.
 You can now abandon this tourist theme park to fend by itself, or stay and watch your beloved numbers rise and rise and... well rise. Forever. Congratulations."

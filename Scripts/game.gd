@@ -42,12 +42,17 @@ func handle_local_selected(localNode):
 #Rep avís que la pantalla de desnonar s'ha confirmat i activa la de triar nou negoci
 func handle_desnonar_confirmed():
 	desnonar.visible = false;
-	chooseBuilding.visible = true;
+	if(!localSelected.isParc):
+		chooseBuilding.visible = true;
+	else:
+		chooseBuilding.init_parc_info(localSelected.parcId)
+		chooseBuilding.visible = true;
 
 #Rep la info del nou negoci (choose_new_building_screen), crida al local perque actualitzi les seves noves dades i gestiona diners
 func handle_new_building_selected(chooseNewBuildingNode):
 	if(chooseNewBuildingNode.newPrice + 10000 <= $WealthContainer/MarginContainer/Money.counter):
-		localSelected.purchase_local(chooseNewBuildingNode.newName, chooseNewBuildingNode.newDesc, chooseNewBuildingNode.newRevenue)
+		localSelected.purchase_local(chooseNewBuildingNode.newName, chooseNewBuildingNode.newDesc, 
+			chooseNewBuildingNode.newRevenue, chooseNewBuildingNode.newIcon)
 		monthlyIncome += chooseNewBuildingNode.newRevenue
 		$WealthContainer/MarginContainer/Money.decrement_money(chooseNewBuildingNode.newPrice)
 		# Cal ficar el preu local? Ja tenim el de desnonar i el del nou local $Money.decrement_money(localSelected.preu)
@@ -71,7 +76,7 @@ func handle_new_building_selected(chooseNewBuildingNode):
 
 #En ordre, carrega el json corresponent al local que s'hagi seleccionat
 func chooseAndLoadLocal(localNode):
-	if counter <= 18 and !localNode.isNegoci:
+	if counter <= 18 and !localNode.isNegoci and !localNode.isParc:
 		var file_path = "res://assets/LocalsTxts/" + str(counter) + ".json"
 		var json_as_text = FileAccess.get_file_as_string(file_path)
 		var json_as_dict = JSON.parse_string(json_as_text)

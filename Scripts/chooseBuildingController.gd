@@ -1,18 +1,23 @@
 extends Node2D
 
-@export var newName: String;
-@export var newDesc: String;
-@export var newRevenue: int;
-@export var newPrice: int;
+@export var newName: String
+@export var newDesc: String
+@export var newRevenue: int
+@export var newPrice: int
+@export var newIcon: CompressedTexture2D
 
 func _ready() -> void:
 	add_to_group("chooseNewBuildingGroup")
+	
+func init_parc_info(parcId: int):
+	print("should only show one option")
 
 func handle_building_option_selected(newBuildingOptionNode):
 	newName = newBuildingOptionNode.nomNewBuilding
 	newDesc = newBuildingOptionNode.descNewBuilding
 	newRevenue = newBuildingOptionNode.revenue
 	newPrice = newBuildingOptionNode.price
+	newIcon = newBuildingOptionNode.icon
 	
 	$ButtonConfirm.disabled = false
 
