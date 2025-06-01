@@ -59,9 +59,6 @@ texture_normal = null
 texture_pressed = null
 texture_hover = null
 
-[node name="negociIcon" parent="Map/Illa1/LocalBottom" index="1"]
-position = Vector2(16, 40)
-
 [node name="Illa2" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(715, 194)
 
@@ -74,9 +71,6 @@ texture_normal = null
 texture_pressed = null
 texture_hover = null
 
-[node name="negociIcon" parent="Map/Illa2/LocalBottom" index="1"]
-position = Vector2(16, 40)
-
 [node name="Illa3" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(876, 194)
 
@@ -88,9 +82,6 @@ negociId = 3
 texture_normal = null
 texture_pressed = null
 texture_hover = null
-
-[node name="negociIcon" parent="Map/Illa3/LocalBottom" index="1"]
-position = Vector2(16, 40)
 
 [node name="ParcLeft" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(554, 372)
@@ -119,9 +110,6 @@ texture_pressed = ExtResource("4_7nbq1")
 texture_hover = ExtResource("4_7nbq1")
 texture_disabled = ExtResource("5_7t8sx")
 
-[node name="negociIcon" parent="Map/ParcLeft/LocalBottom" index="1"]
-position = Vector2(16, 40)
-
 [node name="ParcRight" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(878, 371)
 
@@ -149,9 +137,6 @@ texture_pressed = ExtResource("6_7t8sx")
 texture_hover = ExtResource("6_7t8sx")
 texture_disabled = ExtResource("6_exi56")
 
-[node name="negociIcon" parent="Map/ParcRight/LocalBottom" index="1"]
-position = Vector2(16, 40)
-
 [node name="Illa6" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(557, 545)
 
@@ -163,9 +148,6 @@ negociId = 4
 texture_normal = null
 texture_pressed = null
 texture_hover = null
-
-[node name="negociIcon" parent="Map/Illa6/LocalBottom" index="1"]
-position = Vector2(16, 40)
 
 [node name="Illa7" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(717, 546)
@@ -179,9 +161,6 @@ texture_normal = null
 texture_pressed = null
 texture_hover = null
 
-[node name="negociIcon" parent="Map/Illa7/LocalBottom" index="1"]
-position = Vector2(16, 40)
-
 [node name="Illa8" parent="Map" instance=ExtResource("4_o5yvi")]
 position = Vector2(876, 546)
 
@@ -193,9 +172,6 @@ negociId = 6
 texture_normal = null
 texture_pressed = null
 texture_hover = null
-
-[node name="negociIcon" parent="Map/Illa8/LocalBottom" index="1"]
-position = Vector2(16, 40)
 
 [node name="SagradaFamilia" type="Node2D" parent="Map"]
 position = Vector2(712, 368)
