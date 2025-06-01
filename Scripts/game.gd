@@ -129,4 +129,5 @@ func on_confirm_sagrada_familia():
 	print("confirm safa")
 	$Map/SagradaFamilia/TextureButton.disabled = true
 	$Map/SagradaFamilia/TextureButton.visible = false
+	$SaFaFall.play()
 	$Map/SagradaFamilia/ParkingFinal.visible = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bjaaer4g8a6gw"]
+[gd_scene load_steps=31 format=3 uid="uid://bjaaer4g8a6gw"]
 
 [ext_resource type="Script" uid="uid://c1iuwc684ogay" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://d8bkxw8op8sv" path="res://Scripts/money.gd" id="2_3dryh"]
@@ -29,6 +29,7 @@
 [ext_resource type="Script" uid="uid://bjitediap0qv7" path="res://Scripts/not_enough_money.gd" id="16_nnt18"]
 [ext_resource type="PackedScene" uid="uid://bav8optq5ci0q" path="res://Scenes/startScreen.tscn" id="17_22asu"]
 [ext_resource type="FontFile" uid="uid://6x2sdn7otsqu" path="res://assets/fonts/Electrolize/Electrolize-Regular.ttf" id="21_fkdbe"]
+[ext_resource type="AudioStream" uid="uid://bbpfvrwghvsf5" path="res://assets/sound/stones-falling.mp3" id="23_mucmn"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_wrm1d")
@@ -241,6 +242,9 @@ max_polyphony = 4
 
 [node name="ChaChing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_rku1e")
+
+[node name="SaFaFall" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_mucmn")
 
 [node name="WealthContainer" type="PanelContainer" parent="."]
 offset_left = 47.0

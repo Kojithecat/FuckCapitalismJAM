@@ -71,7 +71,6 @@ price = 15000000
 
 [node name="Option1" parent="BankOption/PanelContainer" index="0"]
 icon = ExtResource("6_n1spn")
-flat = false
 
 [node name="CasinoOption" parent="." instance=ExtResource("3_l0gey")]
 position = Vector2(40, -80)
