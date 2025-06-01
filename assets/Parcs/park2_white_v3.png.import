@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://418xd1ovwj2g"
-path="res://.godot/imported/sagradafamilia_icon.png-db27e33b9b50329084395820a2ba079c.ctex"
+uid="uid://qxb60rx8qsxr"
+path="res://.godot/imported/park2_white_v3.png-4245eaea32af6bfead35c0c21a4cb20f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sagradafamilia_icon.png"
-dest_files=["res://.godot/imported/sagradafamilia_icon.png-db27e33b9b50329084395820a2ba079c.ctex"]
+source_file="res://assets/Parcs/park2_white_v3.png"
+dest_files=["res://.godot/imported/park2_white_v3.png-4245eaea32af6bfead35c0c21a4cb20f.ctex"]
 
 [params]
 

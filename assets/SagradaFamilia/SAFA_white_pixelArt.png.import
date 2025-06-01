@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dicdd0ycwp1db"
-path="res://.godot/imported/SaFa.jpg-22b870ef5c59724c0bb8316e96f40cd9.ctex"
+uid="uid://dwk3u8rbq01eq"
+path="res://.godot/imported/SAFA_white_pixelArt.png-d6f726153517228dfce520137dc225b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SaFa.jpg"
-dest_files=["res://.godot/imported/SaFa.jpg-22b870ef5c59724c0bb8316e96f40cd9.ctex"]
+source_file="res://assets/SagradaFamilia/SAFA_white_pixelArt.png"
+dest_files=["res://.godot/imported/SAFA_white_pixelArt.png-d6f726153517228dfce520137dc225b1.ctex"]
 
 [params]
 

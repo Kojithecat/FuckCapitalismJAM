@@ -1,24 +1,25 @@
-[gd_scene load_steps=29 format=3 uid="uid://bjaaer4g8a6gw"]
+[gd_scene load_steps=30 format=3 uid="uid://bjaaer4g8a6gw"]
 
 [ext_resource type="Script" uid="uid://c1iuwc684ogay" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://d8bkxw8op8sv" path="res://Scripts/money.gd" id="2_3dryh"]
 [ext_resource type="Texture2D" uid="uid://d2iwfts1pkmdy" path="res://assets/background/carreteres_v2.png" id="2_tgy6u"]
 [ext_resource type="Texture2D" uid="uid://c0najfibheeo0" path="res://assets/Parcs/park2.png" id="3_85qyi"]
-[ext_resource type="Texture2D" uid="uid://418xd1ovwj2g" path="res://assets/sagradafamilia_icon.png" id="3_nnt18"]
 [ext_resource type="Script" uid="uid://dseuup1saf4vf" path="res://Scripts/percentatge.gd" id="3_wowpa"]
-[ext_resource type="Texture2D" uid="uid://dsxqdoyow7g6k" path="res://assets/Parcs/park2_white.png" id="4_7nbq1"]
 [ext_resource type="Texture2D" uid="uid://b2g1cdglarh6f" path="res://assets/Parcs/park1.png" id="4_iivbl"]
 [ext_resource type="Script" uid="uid://bjipqqg55duhh" path="res://Scripts/date.gd" id="4_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://b2tjfucfif7jn" path="res://Scenes/illa.tscn" id="4_o5yvi"]
 [ext_resource type="Script" uid="uid://bsdluwqv18ylg" path="res://Scripts/preu_pis_mes.gd" id="4_rfjv2"]
 [ext_resource type="Texture2D" uid="uid://bemq5xt0drgfj" path="res://assets/Parcs/parking.png" id="5_7t8sx"]
-[ext_resource type="Texture2D" uid="uid://b5hg4egjqaf8q" path="res://assets/Parcs/park1_white.png" id="6_7t8sx"]
+[ext_resource type="Texture2D" uid="uid://qxb60rx8qsxr" path="res://assets/Parcs/park2_white_v3.png" id="5_cwurv"]
 [ext_resource type="Texture2D" uid="uid://bjtu6hkvk4y60" path="res://assets/Parcs/casino.png" id="6_exi56"]
 [ext_resource type="Script" uid="uid://dgf2ta6uyh6ak" path="res://sub_viewport.gd" id="7_1l0tm"]
+[ext_resource type="Texture2D" uid="uid://cgpfw763qjye3" path="res://assets/Parcs/park1_white_v3.png" id="8_mucmn"]
 [ext_resource type="PackedScene" uid="uid://dek0xvfrrdxtb" path="res://Scenes/BusinessMan.tscn" id="8_v158k"]
 [ext_resource type="PackedScene" uid="uid://scr3pbddnx5j" path="res://Scenes/desnonar_screen_demo1.tscn" id="9_h4fw4"]
 [ext_resource type="Script" uid="uid://bjjhmeabc0c3o" path="res://Scripts/panel_container.gd" id="10_1phco"]
+[ext_resource type="Texture2D" uid="uid://cndoais0sn01l" path="res://assets/SagradaFamilia/SAFA_pixelArt_v2.png" id="10_cwurv"]
 [ext_resource type="Texture2D" uid="uid://bkv43ihlvy6lt" path="res://assets/Parcs/parking_gran.png" id="10_vm72l"]
+[ext_resource type="Texture2D" uid="uid://djfg3di8bk2ut" path="res://assets/SagradaFamilia/SAFA_white_pixelArt_v2.png" id="11_mucmn"]
 [ext_resource type="AudioStream" uid="uid://ccjet2vr1j8fi" path="res://assets/sound/passive-income.mp3" id="11_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://cwy3vmav7ccnd" path="res://Scenes/choose_new_building_screen.tscn" id="11_rku1e"]
 [ext_resource type="Texture2D" uid="uid://cfpf8bsqup1vs" path="res://assets/background/arbres_v2.png" id="12_cwurv"]
@@ -96,6 +97,9 @@ visible = false
 [node name="LocalLeft" parent="Map/ParcLeft" index="3"]
 visible = false
 
+[node name="LocalTop" parent="Map/ParcLeft" index="4"]
+visible = false
+
 [node name="LocalBottom" parent="Map/ParcLeft" index="5"]
 position = Vector2(-47, -74)
 isParc = true
@@ -103,8 +107,8 @@ parcId = 1
 
 [node name="TextureButton" parent="Map/ParcLeft/LocalBottom" index="0"]
 texture_normal = ExtResource("3_85qyi")
-texture_pressed = ExtResource("4_7nbq1")
-texture_hover = ExtResource("4_7nbq1")
+texture_pressed = ExtResource("5_cwurv")
+texture_hover = ExtResource("5_cwurv")
 texture_disabled = ExtResource("5_7t8sx")
 
 [node name="ParcRight" parent="Map" instance=ExtResource("4_o5yvi")]
@@ -120,6 +124,9 @@ visible = false
 [node name="LocalLeft" parent="Map/ParcRight" index="3"]
 visible = false
 
+[node name="LocalTop" parent="Map/ParcRight" index="4"]
+visible = false
+
 [node name="LocalBottom" parent="Map/ParcRight" index="5"]
 position = Vector2(-49, -73)
 isParc = true
@@ -127,8 +134,8 @@ parcId = 2
 
 [node name="TextureButton" parent="Map/ParcRight/LocalBottom" index="0"]
 texture_normal = ExtResource("4_iivbl")
-texture_pressed = ExtResource("6_7t8sx")
-texture_hover = ExtResource("6_7t8sx")
+texture_pressed = ExtResource("8_mucmn")
+texture_hover = ExtResource("8_mucmn")
 texture_disabled = ExtResource("6_exi56")
 
 [node name="Illa6" parent="Map" instance=ExtResource("4_o5yvi")]
@@ -171,13 +178,14 @@ texture_hover = null
 position = Vector2(712, 368)
 
 [node name="TextureButton" type="TextureButton" parent="Map/SagradaFamilia"]
-offset_left = -92.0
-offset_top = -93.0
-offset_right = 420.0
-offset_bottom = 419.0
-scale = Vector2(0.36, 0.36)
+offset_left = -62.0
+offset_top = -81.0
+offset_right = 70.0
+offset_bottom = 71.0
 disabled = true
-texture_normal = ExtResource("3_nnt18")
+texture_normal = ExtResource("10_cwurv")
+texture_pressed = ExtResource("11_mucmn")
+texture_hover = ExtResource("11_mucmn")
 
 [node name="ParkingFinal" type="Sprite2D" parent="Map/SagradaFamilia"]
 visible = false
@@ -217,6 +225,7 @@ visible = false
 position = Vector2(4, -2)
 
 [node name="StartGameScreen" parent="CanvasGroup" instance=ExtResource("17_22asu")]
+visible = false
 offset_left = -195.0
 offset_top = -162.0
 offset_right = -195.0
