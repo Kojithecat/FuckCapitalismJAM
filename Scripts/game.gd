@@ -9,6 +9,7 @@ extends Node2D
 var localSelected = null
 var option = 0
 var counter = 1
+var counterNegocisParcs = 1
 var totalLocalNum = 26
 var monthlyIncome = 0
 var endGameUnlocked = false
@@ -63,10 +64,12 @@ func handle_new_building_selected(chooseNewBuildingNode):
 		
 		print(counter)
 		print(totalLocalNum)
-		if(counter >= totalLocalNum): 
+		if(counter + counterNegocisParcs >= totalLocalNum): 
 			unlock_endgame()
-		
-		counter += 1
+		if(!localSelected.isNegoci):
+			counter += 1
+		else:
+			counterNegocisParcs += 1
 	else:
 		#TODO Hem de fer handle per quan no tinguem prous diners (T'ho financia la familia, herencia, ajuda del banc, etc)
 		print("No tens prous diners")

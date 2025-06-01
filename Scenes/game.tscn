@@ -50,9 +50,6 @@ position = Vector2(556, 194)
 [node name="Control" parent="Map/Illa1" index="0"]
 metadata/_edit_use_anchors_ = true
 
-[node name="LocalTop" parent="Map/Illa1" index="4"]
-visible = true
-
 [node name="LocalBottom" parent="Map/Illa1" index="5"]
 isNegoci = true
 negociId = 1
