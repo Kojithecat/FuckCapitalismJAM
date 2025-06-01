@@ -50,6 +50,9 @@ position = Vector2(556, 194)
 [node name="Control" parent="Map/Illa1" index="0"]
 metadata/_edit_use_anchors_ = true
 
+[node name="LocalTop" parent="Map/Illa1" index="4"]
+visible = true
+
 [node name="LocalBottom" parent="Map/Illa1" index="5"]
 isNegoci = true
 negociId = 1
@@ -96,9 +99,6 @@ visible = false
 [node name="LocalLeft" parent="Map/ParcLeft" index="3"]
 visible = false
 
-[node name="LocalTop" parent="Map/ParcLeft" index="4"]
-visible = false
-
 [node name="LocalBottom" parent="Map/ParcLeft" index="5"]
 position = Vector2(-47, -74)
 isParc = true
@@ -121,9 +121,6 @@ texture = ExtResource("4_iivbl")
 visible = false
 
 [node name="LocalLeft" parent="Map/ParcRight" index="3"]
-visible = false
-
-[node name="LocalTop" parent="Map/ParcRight" index="4"]
 visible = false
 
 [node name="LocalBottom" parent="Map/ParcRight" index="5"]

@@ -7,6 +7,7 @@ extends Node2D
 var costDesnonar = 10000
 
 func load_data(nom: String, desc: String, preu: int):
+	
 	nomDisplay.text = nom
 	descDisplay.text = desc
 	preuDisplay.text = str(preu)

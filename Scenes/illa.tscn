@@ -27,6 +27,7 @@ position = Vector2(23.03, -72)
 position = Vector2(-48.045, -72)
 
 [node name="LocalTop" parent="." instance=ExtResource("5_jplun")]
+visible = true
 position = Vector2(-30.73, -71.95)
 
 [node name="LocalBottom" parent="." instance=ExtResource("6_oogxs")]

@@ -64,14 +64,16 @@ text = "PROVA"
 label_settings = ExtResource("4_qpds1")
 metadata/_edit_use_anchors_ = true
 
-[node name="Desc" type="Label" parent="."]
+[node name="Desc" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+z_index = 4
 offset_left = -160.0
 offset_top = -80.0
 offset_right = 172.0
-offset_bottom = 54.0
-theme_override_fonts/font = ExtResource("2_4ki0e")
-label_settings = ExtResource("4_qpds1")
-autowrap_mode = 3
+offset_bottom = 120.0
+bbcode_enabled = true
+justification_flags = 235
 metadata/_edit_use_anchors_ = true
 
 [node name="Preu" type="Label" parent="."]

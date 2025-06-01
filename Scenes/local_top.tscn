@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bbwstx5vbc247" path="res://assets/ILLES_OK/Locals/localTop_purchased.png" id="5_ukrxt"]
 
 [node name="Local" type="Node2D"]
+visible = false
 script = ExtResource("1_rsfjx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
