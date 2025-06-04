@@ -66,7 +66,7 @@ func handle_new_building_selected(chooseNewBuildingNode):
 		print(totalLocalNum)
 		if(counter + counterNegocisParcs >= totalLocalNum): 
 			unlock_endgame()
-		if(!localSelected.isNegoci):
+		if(!localSelected.isNegoci and !localSelected.isParc):
 			counter += 1
 		else:
 			counterNegocisParcs += 1

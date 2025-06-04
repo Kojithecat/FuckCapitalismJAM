@@ -226,7 +226,6 @@ visible = false
 position = Vector2(4, -2)
 
 [node name="StartGameScreen" parent="CanvasGroup" instance=ExtResource("17_22asu")]
-visible = false
 offset_left = -195.0
 offset_top = -162.0
 offset_right = -195.0
